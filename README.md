@@ -1,3 +1,3 @@
 README - Team 2132 - Harvest4Us
 
-Jose, Nifemi, Sohum, Ayesha, Katherine
+Jose Castejon, Nifemi Bolu, Sohum Gala, Ayesha Gul, Katherine Mittleider
