@@ -1,0 +1,8 @@
+producer,product_id,unit,produceType,organic,usdaGrade,price,availableQuantity,produceCategory,dateEdited,active
+fake@test.com,1,g,large,0,A,3.25,5,banana,2021-11-02,1
+fake@test.com,2,g,fresh green,1,C,2.5,4,kale,2021-11-05,1
+test@test.com,2,lbs,European,0,A,4.01,2.51,Pear,2021-12-06,0
+test@test.com,3,kg,Russian Blue,1,A,4.01,2.54,Potato,2021-12-06,0
+test@test.com,6,lb,Fuji,0,A,1,10,apple,2021-09-21,1
+test@test.com,7,lb,Red,0,A,1,10,apple,2021-09-21,1
+test@test.com,8,lb,Pink Lady,0,A,1,10,apple,2021-09-21,1

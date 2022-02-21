@@ -1,0 +1,9 @@
+producer,product_id,consumer,date_placed,quantity,shipping,total_cost,sale_id,pendingReview,approved
+fake@test.com,2,fff,2021-11-20 00:00:00,1,0,2.5,0,1,0
+fake@test.com,1,fff,2021-12-06 00:00:00,5,0,10,1,1,0
+fake@test.com,2,fff,2021-12-06 00:00:00,1,0,10,1,0,1
+fake@test.com,1,customer@customer.com,2021-12-06 00:00:00,2,0,10,2,1,0
+fake@test.com,1,other@customer.com,2021-12-06 00:00:00,2,0,10,3,1,0
+fake@test.com,1,fff,2021-12-06 00:00:00,3,0,10,4,1,0
+fake@test.com,1,fff,2021-12-06 00:00:00,3,0,10,5,1,0
+fake@test.com,2,fff,2021-12-06 00:00:00,4,0,10,5,1,0

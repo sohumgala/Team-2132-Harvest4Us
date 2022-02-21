@@ -1,0 +1,5 @@
+producer,product_id,consumer,date_added,quantity
+fake@test.com,1,fff,2021-11-02,1
+fake@test.com,2,fff,2021-11-05,4
+test@test.com,2,fff,2021-12-06,2
+test@test.com,3,fff,2021-12-06,2

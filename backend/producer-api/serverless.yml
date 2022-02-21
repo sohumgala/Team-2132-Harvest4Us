@@ -1,0 +1,56 @@
+service: producer-user-api
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - rds-data:ExecuteSql
+          - rds-data:ExecuteStatement
+        Resource: "MY_CLUSTER_ARN"
+      - Effect: Allow
+        Action:
+          - secretsmanager:GetSecretValue
+          - secretsmanager:PutResourcePolicy
+          - secretsmanager:PutSecretValue
+          - secretsmanager:DeleteSecret
+          - secretsmanager:DescribeSecret
+          - secretsmanager:TagResource
+        Resource: "*"
+
+
+functions:
+  post:
+    handler: scripts/postProducer.postProducer
+    events:
+      - http:
+          path: /new-user
+          method: POST
+  get:
+    handler: scripts/get.get
+    events:
+      - http:
+          path: /new-user/{id}
+          method: GET
+  get-producers:
+    handler: scripts/getProducers.getProducers
+    events:
+      - http:
+          path: /get-producers
+          method: GET
+  get-producer-by-username:
+    handler: scripts/getProducersbyUsername.getProducersbyUsername
+    events:
+      - http:
+          path: /get-producers/{username}
+          method: GET
+  update-profile:
+    handler: scripts/updateProfile.updateProfile
+    events:
+      - http:
+          path: /update-profile
+          method: POST

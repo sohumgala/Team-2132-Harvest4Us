@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginScreen">
+
+    <fragment
+        android:id="@+id/LoginScreen"
+        android:name="com.example.myfirstapp.LoginScreen"
+        android:label="@string/login_screen_label"
+        tools:layout="@layout/login_screen">
+
+        <action
+            android:id="@+id/action_LoginScreen_to_HomeScreen"
+            app:destination="@id/HomeScreen" />
+
+        <action
+            android:id="@+id/action_LoginScreen_to_RegisterScreen"
+            app:destination="@id/RegisterScreen" />
+        <action
+            android:id="@+id/action_LoginScreen_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomeScreen"
+        android:name="com.example.myfirstapp.Marketplace"
+        android:label="@string/home_screen_label"
+        tools:layout="@layout/marketplace">
+
+        <action
+            android:id="@+id/action_Marketplace_to_LoginScreen"
+            app:destination="@id/LoginScreen" />
+        <action
+            android:id="@+id/action_HomeScreen_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegisterScreen"
+        android:name="com.example.myfirstapp.RegisterScreen"
+        android:label="@string/register_screen_label"
+        tools:layout="@layout/register_screen">
+
+        <action
+            android:id="@+id/action_RegisterScreen_to_LoginScreen"
+            app:destination="@id/LoginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.myfirstapp.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_HomeScreen"
+            app:destination="@id/HomeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.example.myfirstapp.ForgotPassword"
+        android:label="Forgot Password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPassword_to_LoginScreen"
+            app:destination="@id/LoginScreen" />
+    </fragment>
+</navigation>

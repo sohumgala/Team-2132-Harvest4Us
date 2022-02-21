@@ -1,0 +1,38 @@
+<resources>
+    <!-- Testing Product array -->
+    <string-array name="products_array">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Orange</item>
+    </string-array>
+
+
+    <!-- Allergy Preference -->
+    <string-array name="allergy_entries">
+        <item>None</item>
+        <item>Tree Nuts</item>
+        <item>Peanuts</item>
+        <item>Shellfish</item>
+        <item>Wheat</item>
+        <item>Soy</item>
+        <item>Fish</item>
+        <item>Milk</item>
+        <item>Eggs</item>
+        <item>Sesame</item>
+    </string-array>
+
+    <string-array name="allergy_values">
+        <item>none</item>
+        <item>tree_nuts</item>
+        <item>peanuts</item>
+        <item>shellfish</item>
+        <item>wheat</item>
+        <item>soy</item>
+        <item>fish</item>
+        <item>milk</item>
+        <item>eggs</item>
+        <item>sesame</item>
+    </string-array>
+
+    <string-array name="empty_array" />
+</resources>
