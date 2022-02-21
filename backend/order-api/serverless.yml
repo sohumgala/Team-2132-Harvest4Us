@@ -1,0 +1,38 @@
+service: order-api
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: python3.8
+  lambdaHashingVersion: '20201221'
+  iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - rds-data:ExecuteSql
+          - rds-data:ExecuteStatement
+        Resource: "MY_CLUSTER_ARN"
+      - Effect: Allow
+        Action:
+          - secretsmanager:GetSecretValue
+          - secretsmanager:PutResourcePolicy
+          - secretsmanager:PutSecretValue
+          - secretsmanager:DeleteSecret
+          - secretsmanager:DescribeSecret
+          - secretsmanager:TagResource
+        Resource: "*"
+
+
+functions:
+  get-orders-by-producer:
+    handler: scripts/getOrdersByProducer.getOrdersByProducer
+    events:
+      - http:
+          path: /getOrdersByProducer/{producer}
+          method: GET
+  reject-order:
+    handler: scripts/evaluateOrder.evaluateOrder
+    events:
+      - http:
+          path: /evaluate-order
+          method: POST

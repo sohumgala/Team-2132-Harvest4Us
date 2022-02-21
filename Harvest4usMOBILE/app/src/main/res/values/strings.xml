@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Harvest4Us</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="login_screen_label">Harvest4Us</string>
+    <string name="second_fragment_label">Harvest4Us</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="str_welcome">Welcome</string>
+    <string name="home_screen_label">Home Screen</string>
+    <string name="register_screen_label">Register Screen</string>
+    <string name="search">Search</string>
+    <string name="searchText">What are you looking for?</string>
+    <string name="title_activity_marketplace">Marketplace</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+
+    <!-- Preference Titles -->
+    <string name="user_profile_header">User Profile</string>
+    <string name="location_header">Location</string>
+
+    <!-- Messages Preferences -->
+    <string name="allergy_title">Allergies</string>
+    <string name="location_title">Zip Code</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="organic">Organic</string>
+    <string name="not_organic">Not Organic</string>
+    <string name="apply_filter">Apply Filter</string>
+
+    <!-- Paypal -->
+    <string name="payment_button_quick_start_activity_title">Payment</string>
+    <string name="payment_button_quick_start_activity_payment_button_title">Payment</string>
+    <string name="payment_button_quick_start_activity_payment_button_description">Please proceed through PayPal to complete your order.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_cart.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_checkout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_inventory.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_marketplace.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_producer.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/activity_success.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/content_main.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/fragment_forgot_password.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/login_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/marketplace.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/layout/test.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/menu/menu_main.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/menu/nav_menu.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Bobby Bloomquist/Documents/School/3rd/1132_orcaX/MyFirstApp/app/src/main/res/xml/root_preferences.xml" value="0.36102564102564105" />
+        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.3828125" />
+        <entry key="app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.15677083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.15677083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.2805128205128205" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.13104350338206933" />
+        <entry key="app/src/main/res/layout/activity_checkout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13120567375886524" />
+        <entry key="app/src/main/res/layout/activity_marketplace.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_producer.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_product.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/home_screen.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/logged_in_host.xml" value="0.37864583333333335" />
+        <entry key="app/src/main/res/layout/login_screen.xml" value="0.2364346755729024" />
+        <entry key="app/src/main/res/layout/marketplace.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/profile.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/register_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/settings_main.xml" value="0.37864583333333335" />
+        <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/menu/nav_menu.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

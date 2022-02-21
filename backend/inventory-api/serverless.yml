@@ -1,0 +1,68 @@
+service: inventory-api
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  region: us-east-1
+  runtime: python3.8
+  lambdaHashingVersion: '20201221'
+  iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - rds-data:ExecuteSql
+          - rds-data:ExecuteStatement
+        Resource: "MY_CLUSTER_ARN"
+      - Effect: Allow
+        Action:
+          - secretsmanager:GetSecretValue
+          - secretsmanager:PutResourcePolicy
+          - secretsmanager:PutSecretValue
+          - secretsmanager:DeleteSecret
+          - secretsmanager:DescribeSecret
+          - secretsmanager:TagResource
+        Resource: "*"
+
+
+functions:
+  get-by-id:
+    handler: scripts/getByID.getByID
+    events:
+      - http:
+          path: /get-by-id/{id}
+          method: GET
+  get-by-username:
+    handler: scripts/getByUsername.getByproducer
+    events:
+      - http:
+          path: /get-by-producer/{producer}
+          method: GET
+  
+  items-filter:
+    handler: scripts/itemFilter.itemFilter
+
+    events:
+      - http:
+          path: /filter-item/{filters}
+          method: GET
+
+  delete-item:
+    handler: scripts/deleteItem.deleteItem
+    events:
+      - http:
+          path: /delete-item/
+          method: POST
+
+  add-item:
+    handler: scripts/addItem.addItem
+    events:
+      - http:
+          path: /add-item/
+          method: POST
+  
+  update-item:
+    handler: scripts/updateItem.updateItem
+    events:
+      - http:
+          path: /update-item/
+          method: POST
+  
