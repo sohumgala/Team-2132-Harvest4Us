@@ -4,25 +4,136 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:outlineProvider="background"
     tools:context=".FirstFragment">
 
     <TextView
-        android:id="@+id/textview_first"
+        android:id="@+id/education_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_first"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
+        android:fontFamily="@font/montserrat_bold_font"
+        android:text="@string/education_title"
+        android:textAlignment="viewStart"
+        android:textColor="@color/mainFont"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:id="@+id/section_title_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold_font"
+        android:text="@string/section_title_text_1"
+        android:textAlignment="viewStart"
+        android:textColor="@color/mainFont"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/article_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/education_title"
+        app:layout_constraintVertical_bias="0.54" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/article_1"
+        android:layout_width="382dp"
+        android:layout_height="128dp"
+        android:translationZ="2dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/education_title"
+        app:layout_constraintVertical_bias="0.153">
+
+        <TextView
+            android:id="@+id/title_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold_font"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/title_text_1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainFont"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/body_1"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="40dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/body_text_1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainFont" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/section_title_2"
+        android:layout_width="367dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/montserrat_bold_font"
+        android:text="@string/section_title_text_2"
+        android:textAlignment="viewStart"
+        android:textColor="@color/mainFont"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/article_1"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/article_2"
+        android:layout_width="382dp"
+        android:layout_height="128dp"
+        android:translationZ="2dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/section_title_2"
+        app:layout_constraintVertical_bias="0.092">
+
+        <TextView
+            android:id="@+id/title_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold_font"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/title_text_2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainFont"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/body_2"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingStart="15dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/body_text_2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainFont" />
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

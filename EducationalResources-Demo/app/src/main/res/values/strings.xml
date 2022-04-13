@@ -1,12 +1,26 @@
 <resources>
-    <string name="app_name">EducationalResources-Demo</string>
+    <string name="education_title">Resources</string>
+
+<!--    Strings for article names and info-->
+    <string name="section_title_text_1">Farmers Markets</string>
+
+    <string name="title_text_1">National Farmers Market Directory</string>
+    <string name="body_text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="section_title_text_2">Government Nutrition Programs</string>
+
+    <string name="title_text_2">Supplemental Nutrition Assistance Program (SNAP)</string>
+    <string name="body_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+
+    <!--    Probably can delete all of this stuff?-->
+    <string name="app_name">edu resources attempt</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>
