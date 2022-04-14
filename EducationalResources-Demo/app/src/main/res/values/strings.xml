@@ -1,17 +1,47 @@
 <resources>
     <string name="education_title">Resources</string>
 
-<!--    Strings for article names and info-->
+    <!--    Strings for article names and info-->
     <string name="section_title_text_1">Farmers Markets</string>
 
     <string name="title_text_1">National Farmers Market Directory</string>
     <string name="body_text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
 
-    <string name="section_title_text_2">Government Nutrition Programs</string>
-
-    <string name="title_text_2">Supplemental Nutrition Assistance Program (SNAP)</string>
+    <string name="title_text_2">Local Harvest - Farmers Market</string>
     <string name="body_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
 
+    <string name="section_title_text_2">Government Nutrition Programs</string>
+
+    <string name="title_text_3">Supplemental Nutrition Assistance Program (SNAP)</string>
+    <string name="body_text_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="title_text_4">SNAP for Women, Infants, and Children (WIC)</string>
+    <string name="body_text_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="title_text_5">Seniors Farmers’ Market Nutrition Program (SFMNP)</string>
+    <string name="body_text_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="title_text_6">Google Find Food Support</string>
+    <string name="body_text_6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="section_title_text_3">Healthy Eating</string>
+
+    <string name="title_text_7">USDA - Healthy Eating</string>
+    <string name="body_text_7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="title_text_8">American Heart Association - Healthy Eating</string>
+    <string name="body_text_8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="section_title_text_4">Communities</string>
+
+    <string name="title_text_9">Community Fridge Locations</string>
+    <string name="body_text_9">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="title_text_10">The Black Church Food Security Network</string>
+    <string name="body_text_10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+
+    <string name="title_text_11">Black Farmers’ Network</string>
+    <string name="body_text_11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
 
     <!--    Probably can delete all of this stuff?-->
     <string name="app_name">edu resources attempt</string>
