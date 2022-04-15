@@ -45,9 +45,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_1"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="160dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_1"
+                android:text="The Farmers Market Directory provides convenient access to information about local produce including: local farms, market locations, directions, operating times, product offerings, accepted forms of payment, and more."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -84,9 +84,10 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_2"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="105dp"
             android:layout_marginTop="10dp"
+            android:foregroundGravity="bottom"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +115,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_2"
+                android:text="Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -136,9 +137,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_3"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="143dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +167,8 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_3"
+                android:text="Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.
+"
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -204,7 +206,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_4"
+                android:text="Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -212,9 +214,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_5"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="113dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -242,7 +244,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_5"
+                android:text="SFMNP provides support for low-income seniors in accessing local, fresh food."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -250,9 +252,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_6"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="105dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -280,7 +282,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_6"
+                android:text="Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -302,9 +304,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_7"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="88dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -332,7 +334,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_7"
+                android:text="Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -340,9 +342,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_8"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="113dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -370,7 +372,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_8"
+                android:text="Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -392,9 +394,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_9"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -422,7 +424,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_9"
+                android:text="Find a community fridge near you!"
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -430,9 +432,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_10"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="160dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -460,7 +462,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_10"
+                android:text="The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities."
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
@@ -468,9 +470,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/article_11"
             android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
+            android:layout_height="103dp"
             android:layout_marginTop="10dp"
+            android:translationZ="2dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -498,7 +500,7 @@
                 android:paddingStart="15dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
-                android:text="@string/body_text_11"
+                android:text="Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy. "
                 android:textAlignment="viewStart"
                 android:textColor="@color/mainFont" />
         </androidx.cardview.widget.CardView>
