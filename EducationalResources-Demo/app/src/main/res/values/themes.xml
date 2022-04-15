@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.EducationalResourcesDemo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/harvest4us_beige</item>
-        <item name="colorPrimaryVariant">@color/harvest4us_beige</item>
+        <item name="colorPrimary">@color/harvest4us_green</item>
+        <item name="colorPrimaryVariant">@color/harvest4us_green</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
