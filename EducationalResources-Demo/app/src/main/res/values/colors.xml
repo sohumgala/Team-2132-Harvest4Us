@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name = "mainFont">#2C2C2C</color>
+    <color name = "harvest4us_yellow">#E7B347</color>
+    <color name = "harvest4us_green">#456252</color>
+    <color name = "harvest4us_red">#BF764C</color>
+    <color name = "harvest4us_beige">#EBE1D5</color>
+    <color name = "harvest4us_grey">#777672</color>
 </resources>
