@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold_font"
             android:text="@string/section_title_text_2"
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:textColor="@color/mainFont"
             android:textSize="25sp"
             android:layout_marginTop="10dp"
