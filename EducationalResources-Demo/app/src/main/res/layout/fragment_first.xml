@@ -1,513 +1,575 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav_container">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:outlineProvider="none"
+            android:padding="20dp"
+            tools:context=".FirstFragment">
+
+            <TextView
+                android:id="@+id/education_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold_font"
+                android:text="@string/education_title"
+                android:textAlignment="viewStart"
+                android:textColor="@color/mainFont"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/section_title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold_font"
+                android:text="@string/section_title_text_1"
+                android:textColor="@color/mainFont"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/article_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/education_title" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_1"
+                android:layout_width="365dp"
+                android:layout_height="172dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section_title_1">
+
+                <TextView
+                    android:id="@+id/title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_1"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_1"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="The Farmers Market Directory provides convenient access to information about local produce including: local farms, market locations, directions, operating times, product offerings, accepted forms of payment, and more."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_2"
+                android:layout_width="365dp"
+                android:layout_height="137dp"
+                android:layout_marginTop="10dp"
+                android:foregroundGravity="bottom"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_1">
+
+                <TextView
+                    android:id="@+id/title_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_2"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_2"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/section_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold_font"
+                android:text="@string/section_title_text_2"
+                android:textAlignment="center"
+                android:textColor="@color/mainFont"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_3"
+                android:layout_width="365dp"
+                android:layout_height="159dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section_title_2">
+
+                <TextView
+                    android:id="@+id/title_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_3"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_3"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.
+"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_4"
+                android:layout_width="365dp"
+                android:layout_height="119dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_3">
+
+                <TextView
+                    android:id="@+id/title_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_4"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_4"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_5"
+                android:layout_width="365dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_4">
+
+                <TextView
+                    android:id="@+id/title_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_5"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_5"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="SFMNP provides support for low-income seniors in accessing local, fresh food."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_6"
+                android:layout_width="365dp"
+                android:layout_height="115dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_5">
+
+                <TextView
+                    android:id="@+id/title_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_6"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_6"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/section_title_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold_font"
+                android:text="@string/section_title_text_3"
+                android:textAlignment="viewStart"
+                android:textColor="@color/mainFont"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_6" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_7"
+                android:layout_width="365dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section_title_3">
+
+                <TextView
+                    android:id="@+id/title_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_7"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_7"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_8"
+                android:layout_width="365dp"
+                android:layout_height="117dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_7">
+
+                <TextView
+                    android:id="@+id/title_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_8"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_8"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/section_title_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_bold_font"
+                android:text="@string/section_title_text_4"
+                android:textAlignment="viewStart"
+                android:textColor="@color/mainFont"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_8" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_9"
+                android:layout_width="365dp"
+                android:layout_height="77dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section_title_4">
+
+                <TextView
+                    android:id="@+id/title_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_9"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_9"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Find a community fridge near you!"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_10"
+                android:layout_width="365dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_9">
+
+                <TextView
+                    android:id="@+id/title_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_10"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_10"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/article_11"
+                android:layout_width="365dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="2dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="2dp"
+                app:contentPadding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/article_10">
+
+                <TextView
+                    android:id="@+id/title_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/title_text_11"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/body_11"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fontFamily="@font/roboto_light_font"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy. "
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
+        android:id="@+id/bottom_nav_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:outlineProvider="background"
-        tools:context=".FirstFragment">
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true">
 
-        <TextView
-            android:id="@+id/education_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold_font"
-            android:text="@string/education_title"
-            android:textAlignment="viewStart"
-            android:textColor="@color/mainFont"
-            android:textSize="30sp"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav"
+            android:layout_width="420dp"
+            android:layout_height="64dp"
+            android:background="@color/harvest4us_beige"
+            app:itemIconTint="@color/harvest4us_grey"
+            app:itemTextColor="@color/harvest4us_grey"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:menu="@menu/bottom_nav"
+            tools:layout_conversion_absoluteHeight="75dp"
+            tools:layout_conversion_absoluteWidth="411dp">
 
-        <TextView
-            android:id="@+id/section_title_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold_font"
-            android:text="@string/section_title_text_1"
-            android:textAlignment="viewStart"
-            android:textColor="@color/mainFont"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/article_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/education_title" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_1"
-            android:layout_width="382dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/section_title_1">
-
-            <TextView
-                android:id="@+id/title_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_1"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_1"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginTop="40dp"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="The Farmers Market Directory provides convenient access to information about local produce including: local farms, market locations, directions, operating times, product offerings, accepted forms of payment, and more."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_2"
-            android:layout_width="382dp"
-            android:layout_height="105dp"
-            android:layout_marginTop="10dp"
-            android:foregroundGravity="bottom"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_1">
-
-            <TextView
-                android:id="@+id/title_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_2"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_2"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/section_title_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold_font"
-            android:text="@string/section_title_text_2"
-            android:textAlignment="viewStart"
-            android:textColor="@color/mainFont"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_2" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_3"
-            android:layout_width="382dp"
-            android:layout_height="143dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/section_title_2">
-
-            <TextView
-                android:id="@+id/title_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_3"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_3"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.
-"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_4"
-            android:layout_width="382dp"
-            android:layout_height="128dp"
-            android:translationZ="2dp"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_3">
-
-            <TextView
-                android:id="@+id/title_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_4"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_4"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_5"
-            android:layout_width="382dp"
-            android:layout_height="113dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_4">
-
-            <TextView
-                android:id="@+id/title_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_5"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_5"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="SFMNP provides support for low-income seniors in accessing local, fresh food."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_6"
-            android:layout_width="382dp"
-            android:layout_height="105dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_5">
-
-            <TextView
-                android:id="@+id/title_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_6"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_6"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/section_title_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold_font"
-            android:text="@string/section_title_text_3"
-            android:textAlignment="viewStart"
-            android:textColor="@color/mainFont"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_6" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_7"
-            android:layout_width="382dp"
-            android:layout_height="88dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/section_title_3">
-
-            <TextView
-                android:id="@+id/title_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_7"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_7"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_8"
-            android:layout_width="382dp"
-            android:layout_height="113dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_7">
-
-            <TextView
-                android:id="@+id/title_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_8"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_8"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/section_title_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold_font"
-            android:text="@string/section_title_text_4"
-            android:textAlignment="viewStart"
-            android:textColor="@color/mainFont"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_8" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_9"
-            android:layout_width="382dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/section_title_4">
-
-            <TextView
-                android:id="@+id/title_9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_9"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_9"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Find a community fridge near you!"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_10"
-            android:layout_width="382dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_9">
-
-            <TextView
-                android:id="@+id/title_10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_10"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_10"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities."
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/article_11"
-            android:layout_width="382dp"
-            android:layout_height="103dp"
-            android:layout_marginTop="10dp"
-            android:translationZ="2dp"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/article_10">
-
-            <TextView
-                android:id="@+id/title_11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/title_text_11"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/body_11"
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:paddingStart="15dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:text="Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy. "
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont" />
-        </androidx.cardview.widget.CardView>
-
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</RelativeLayout>
+
+
+
+
+
 
 
 
