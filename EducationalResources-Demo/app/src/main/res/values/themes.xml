@@ -22,4 +22,5 @@
     <style name="Theme.EducationalResourcesDemo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.EducationalResourcesDemo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
