@@ -5,43 +5,43 @@
     <string name="section_title_text_1">Farmers Markets</string>
 
     <string name="title_text_1">National Farmers Market Directory</string>
-    <string name="body_text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_1">The Farmers Market Directory provides convenient access to information about local produce including: local farms, market locations, directions, operating times, product offerings, accepted forms of payment, and more.</string>
 
     <string name="title_text_2">Local Harvest - Farmers Market</string>
-    <string name="body_text_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_2">Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events.</string>
 
     <string name="section_title_text_2">Government Nutrition Programs</string>
 
     <string name="title_text_3">Supplemental Nutrition Assistance Program (SNAP)</string>
-    <string name="body_text_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_3">Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.</string>
 
     <string name="title_text_4">SNAP for Women, Infants, and Children (WIC)</string>
-    <string name="body_text_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_4">Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five.</string>
 
     <string name="title_text_5">Seniors Farmers’ Market Nutrition Program (SFMNP)</string>
-    <string name="body_text_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_5">SFMNP provides support for low-income seniors in accessing local, fresh food.</string>
 
     <string name="title_text_6">Google Find Food Support</string>
-    <string name="body_text_6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_6">Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support.</string>
 
     <string name="section_title_text_3">Healthy Eating</string>
 
     <string name="title_text_7">USDA - Healthy Eating</string>
-    <string name="body_text_7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_7">Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods.</string>
 
     <string name="title_text_8">American Heart Association - Healthy Eating</string>
-    <string name="body_text_8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_8">Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion.</string>
 
     <string name="section_title_text_4">Communities</string>
 
     <string name="title_text_9">Community Fridge Locations</string>
-    <string name="body_text_9">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_9">Find a community fridge near you!</string>
 
     <string name="title_text_10">The Black Church Food Security Network</string>
-    <string name="body_text_10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_10">The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities.</string>
 
     <string name="title_text_11">Black Farmers’ Network</string>
-    <string name="body_text_11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat id felis viverra sagittis. Etiam ut rhoncus arcu.</string>
+    <string name="body_text_11">Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy.</string>
 
     <!--    Probably can delete all of this stuff?-->
     <string name="app_name">edu resources attempt</string>
