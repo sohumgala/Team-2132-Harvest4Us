@@ -160,7 +160,7 @@ _Congrats! You now have set up the APIs for Harvest4Us. Now you need to input th
 * Once you have Node in working order, open Visual Studio Code.  
 * Then Open > harvest4usWEB. 
 * When the project is open, open the Terminal menu on the top menu bar, and select ‘New Terminal.’ 
-* In the terminal, type ‘npm -install’ and hit enter. This will install all project dependencies, including the relevant libraries. 
+* In the terminal, type ‘npm install’ and hit enter. This will install all project dependencies, including the relevant libraries. 
 
 **Libraries Used In This Project Include**: 
   -   React.js (A Javascript interaction library) 
