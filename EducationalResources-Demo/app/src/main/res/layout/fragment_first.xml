@@ -83,7 +83,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="The Farmers Market Directory provides convenient access to information about local produce including: local farms, market locations, directions, operating times, product offerings, accepted forms of payment, and more."
+                    android:text="@string/body_text_1"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -124,7 +124,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events."
+                    android:text="@string/body_text_2"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -178,8 +178,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.
-"
+                    android:text="@string/body_text_3"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -219,7 +218,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five."
+                    android:text="@string/body_text_4"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -259,7 +258,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="SFMNP provides support for low-income seniors in accessing local, fresh food."
+                    android:text="@string/body_text_5"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -299,7 +298,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support."
+                    android:text="@string/body_text_6"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -353,7 +352,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods."
+                    android:text="@string/body_text_7"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -393,7 +392,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion."
+                    android:text="@string/body_text_8"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -447,7 +446,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Find a community fridge near you!"
+                    android:text="@string/body_text_9"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -487,7 +486,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities."
+                    android:text="@string/body_text_10"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
@@ -527,7 +526,7 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy. "
+                    android:text="@string/body_text_11"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont" />
             </androidx.cardview.widget.CardView>
