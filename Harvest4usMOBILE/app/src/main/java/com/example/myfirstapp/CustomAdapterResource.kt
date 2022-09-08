@@ -32,7 +32,7 @@ class CustomAdapterResource(private val mList: List<ResourceViewModel>, private 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ResourceViewModel.produceType
 
-        holder.subtextView.text = ResourceViewModel.produceCategory
+        holder.subtextView.text = ResourceViewModel.description
 
 
         holder.itemView.setOnClickListener {

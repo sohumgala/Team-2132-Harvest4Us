@@ -41,39 +41,60 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
 
         //Displays all items, not using a specific search string
         data.add(ResourceViewModel(
-            "Find Food Support",
-            "Google",
+            "National Farmers Market Directory",
+            "The Farmers Market Directory provides convenient access to information about local produce including: local farms, market locations, directions, operating times, product offerings, accepted forms of payment, and more.",
+            "https://www.ams.usda.gov/local-food-directories/farmersmarkets",
+        ))
+        data.add(ResourceViewModel(
+            "Local Harvest - Farmers Market",
+            "Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events.",
+            "https://www.localharvest.org",
+        ))
+        data.add(ResourceViewModel(
+            "Supplemental Nutrition Assistance Program (SNAP)",
+            "Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.",
+            "https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program",
+        ))
+        data.add(ResourceViewModel(
+            "SNAP for Women, Infants, and Children (WIC)",
+            "Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five.",
+            "https://www.fns.usda.gov/wic",
+        ))
+        data.add(ResourceViewModel(
+            "Seniors Farmers’ Market Nutrition Program (SFMNP)",
+            "SFMNP provides support for low-income seniors in accessing local, fresh food.",
+            "https://www.fns.usda.gov/sfmnp/senior-farmers-market-nutrition-program",
+        ))
+        data.add(ResourceViewModel(
+            "Google Find Food Support",
+            "Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support.",
             "https://findfoodsupport.withgoogle.com",
         ))
         data.add(ResourceViewModel(
-            "AgLanta Resources",
-            "AgLanta",
-            "https://www.aglanta.org/aglanta-resources-index",
+            "USDA - Healthy Eating",
+            "Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods.",
+            "https://www.nutrition.gov/topics/basic-nutrition/healthy-eating",
+        ))
+
+        data.add(ResourceViewModel(
+            "American Heart Association - Healthy Eating",
+            "Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion.",
+            "https://www.heart.org/en/healthy-living/healthy-eating",
         ))
         data.add(ResourceViewModel(
-            "Freedge: Public Fridges",
-            "Freedge",
-            "https://freedge.org",
-        ))
-        data.add(ResourceViewModel(
-            "Freedge Locations",
-            "Freedge",
+            "Community Fridge Locations",
+            "Find a community fridge near you!",
             "https://freedge.org/locations/",
         ))
         data.add(ResourceViewModel(
-            "Farming Education",
-            "SARE",
-            "https://southern.sare.org/?s=&custom-order=date-desc&cat_location%5B%5D=south&post_type=product&re=1",
+            "The Black Church Food Security Network",
+            "The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities.",
+            "https://blackchurchfoodsecurity.net/become-a-member/",
         ))
         data.add(ResourceViewModel(
-            "Black-owned Farm Map",
-            "Black Food Justice",
-            "https://www.blackfoodjustice.org/food-map-director",
-        ))
-        data.add(ResourceViewModel(
-            "Apply for SNAP",
-            "USDA",
-            "https://www.fns.usda.gov/snap/apply-to-accept",
+            "Black Farmers’ Network",
+            "Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy.",
+            "https://blackfarmersnetwork.com/category/education/",
         ))
 
         // This will pass the ArrayList to our Adapter
