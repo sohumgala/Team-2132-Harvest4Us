@@ -213,7 +213,8 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
             //Get the list of items pertaining to the search string
             println(minPriceValue)
             println(maxPriceValue)
-            run("https://f6e1mmza5c.execute-api.us-east-1.amazonaws.com/dev/filter-item/%7Bfilters/?price_range=$maxPriceValue,$minPriceValue&search_key=$searchString&distance=X&consumer=$username")
+            // run("https://f6e1mmza5c.execute-api.us-east-1.amazonaws.com/dev/filter-item/%7Bfilters/?price_range=$maxPriceValue,$minPriceValue&search_key=$searchString&distance=X&consumer=$username")
+            responseString = DB.filterItem(maxPriceValue, minPriceValue, searchString, username).body?.string()!!
             //Wait for a response
             Thread.sleep(1700)
 
@@ -221,7 +222,7 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
                 //Format the response string
                 responseString = responseString.removePrefix("{\"message\":")
                 responseString = responseString.removeSuffix("}")
-
+                println(responseString)
                 //Make the string into a JSON array
                 var jsonArray = JSONArray(responseString)
                 // This loop will add each item and the attributes to the inventory list

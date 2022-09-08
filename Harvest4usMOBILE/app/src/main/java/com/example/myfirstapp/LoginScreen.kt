@@ -6,13 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.myfirstapp.databinding.LoginScreenBinding
-import kotlinx.coroutines.awaitAll
 import okhttp3.*
 import java.io.IOException
 
@@ -60,7 +56,7 @@ class LoginScreen : Fragment() {
             val username = binding.etUserName.text
             val password = binding.etPassword.text
             // Run the API call
-            run("https://q74g0wn56a.execute-api.us-east-1.amazonaws.com/dev/new-user/$username||$password")
+            responseResult = DB.newUser(username, password);
             Thread.sleep(1700)
 
             // if inputted credentials match with database, enter the Marketplace
