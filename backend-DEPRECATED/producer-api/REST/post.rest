@@ -1,0 +1,1 @@
+GET https://ohn09n3sii.execute-api.us-east-1.amazonaws.com/dev/new-user/fff||ggg

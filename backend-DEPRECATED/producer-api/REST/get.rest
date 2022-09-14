@@ -1,0 +1,8 @@
+POST https://ohn09n3sii.execute-api.us-east-1.amazonaws.com/dev/new-user
+
+{
+    "username"      : "fff",
+    "password"      : "ggg",
+    "first_name"    : "f",
+    "last_name"     : "ff"
+}
