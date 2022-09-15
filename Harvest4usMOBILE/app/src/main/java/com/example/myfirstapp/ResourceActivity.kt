@@ -16,13 +16,20 @@ import java.io.IOException
 
 class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
     private lateinit var adapter: CustomAdapterResource
+    private lateinit var adapter1: CustomAdapterResource
+    private lateinit var adapter2: CustomAdapterResource
+    private lateinit var adapter3: CustomAdapterResource
 
     //Creates a place to store the returned messages from the API
     private val client = OkHttpClient()
     var responseString = ""
 
     //Holds the items
-    var data = ArrayList<ResourceViewModel>()
+    var data = ArrayList<ResourceViewModel>() // ArrayList for Farmers Market Resources
+    var data1 = ArrayList<ResourceViewModel>() // ArrayList for Government Nutrition Programs Resources
+    var data2 = ArrayList<ResourceViewModel>() // ArrayList for Healthy Eating Resources
+    var data3 = ArrayList<ResourceViewModel>() // ArrayList for Community Food Support Resources
+
 
     private var username: String? = null
 
@@ -35,6 +42,9 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
 
         // getting the recyclerview by its id
         val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
+        val recyclerview1 = findViewById<RecyclerView>(R.id.lv_listView)
+        val recyclerview2 = findViewById<RecyclerView>(R.id.lv_listView)
+        val recyclerview3 = findViewById<RecyclerView>(R.id.lv_listView)
 
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
@@ -50,48 +60,48 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
             "Real Food, Real Farmers, Real Community. Lists local farms, farmers markets, restaurants, and other produce related events.",
             "https://www.localharvest.org",
         ))
-        data.add(ResourceViewModel(
+        data1.add(ResourceViewModel(
             "Supplemental Nutrition Assistance Program (SNAP)",
             "Discover how SNAP provides nutrition benefits to supplement the food budget of low-income families so they can purchase healthy food and move towards self-sufficiency.",
             "https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program",
         ))
-        data.add(ResourceViewModel(
+        data1.add(ResourceViewModel(
             "SNAP for Women, Infants, and Children (WIC)",
             "Learn about supplemental SNAP benefits for pregnant women, infants, and children under the age of five.",
             "https://www.fns.usda.gov/wic",
         ))
-        data.add(ResourceViewModel(
+        data1.add(ResourceViewModel(
             "Seniors Farmers’ Market Nutrition Program (SFMNP)",
             "SFMNP provides support for low-income seniors in accessing local, fresh food.",
             "https://www.fns.usda.gov/sfmnp/senior-farmers-market-nutrition-program",
         ))
-        data.add(ResourceViewModel(
+        data1.add(ResourceViewModel(
             "Google Find Food Support",
             "Find food resources like food pantries, snap benefits, and stores that accept EBT with Google’s Find Food Support.",
             "https://findfoodsupport.withgoogle.com",
         ))
-        data.add(ResourceViewModel(
+        data2.add(ResourceViewModel(
             "USDA - Healthy Eating",
             "Get resources to help you eat a healthy diet with vegetables, fruits, protein, grains, and dairy foods.",
             "https://www.nutrition.gov/topics/basic-nutrition/healthy-eating",
         ))
 
-        data.add(ResourceViewModel(
+        data2.add(ResourceViewModel(
             "American Heart Association - Healthy Eating",
             "Learn what to look for at the grocery store, restaurants, your workplace, and any eating occasion.",
             "https://www.heart.org/en/healthy-living/healthy-eating",
         ))
-        data.add(ResourceViewModel(
+        data3.add(ResourceViewModel(
             "Community Fridge Locations",
             "Find a community fridge near you!",
             "https://freedge.org/locations/",
         ))
-        data.add(ResourceViewModel(
+        data3.add(ResourceViewModel(
             "The Black Church Food Security Network",
             "The Black Church Food Security Network (BCFSN) utilizes an asset- based approach in organizing and linking the vast resources of historically African american congregations in rural and urban communities.",
             "https://blackchurchfoodsecurity.net/become-a-member/",
         ))
-        data.add(ResourceViewModel(
+        data3.add(ResourceViewModel(
             "Black Farmers’ Network",
             "Black Farmers’ Network (BFN) is a site for rural, African-American farmers to share stories, products and services in a now digital-driven economy.",
             "https://blackfarmersnetwork.com/category/education/",
@@ -99,9 +109,16 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
 
         // This will pass the ArrayList to our Adapter
         adapter = CustomAdapterResource(data, this)
+        adapter1 = CustomAdapterResource(data1, this)
+        adapter2 = CustomAdapterResource(data2, this)
+        adapter3 = CustomAdapterResource(data3, this)
+
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
+        recyclerview1.adapter = adapter1
+        recyclerview2.adapter = adapter2
+        recyclerview3.adapter = adapter3
 
         //Logout button goes to Login screen when clicked
         val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
