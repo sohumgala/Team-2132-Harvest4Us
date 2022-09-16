@@ -23,7 +23,6 @@ class CustomAdapter(private val mList: List<ItemsViewModel>, private val cellCli
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val ItemsViewModel = mList[position]
 
         // sets the image to the imageview from our itemHolder class
@@ -34,11 +33,9 @@ class CustomAdapter(private val mList: List<ItemsViewModel>, private val cellCli
 
         holder.subtextView.text = ItemsViewModel.produceCategory
 
-
         holder.itemView.setOnClickListener {
             cellClickListener.onCellClickListener(ItemsViewModel)
         }
-
     }
 
     // return the number of the items in the list
@@ -70,15 +67,15 @@ class CustomAdapter(private val mList: List<ItemsViewModel>, private val cellCli
                 val queryString = charSequence?.toString()?.toLowerCase()
 
                 val filterResults = Filter.FilterResults()
-                filterResults.values = if (queryString==null || queryString.isEmpty())
+                filterResults.values = if (queryString == null || queryString.isEmpty()) {
                     mList
-                else
+                } else {
                     mList.filter {
                         it.produceType.lowercase(Locale.getDefault()).contains(queryString)
                     }
+                }
                 return filterResults
             }
         }
     }
 }
-

@@ -48,8 +48,8 @@ class PaymentButtonQuickStartActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     private fun setupPaymentButton() {
         println("in")
-        var extras: Bundle? = intent.extras;
-        var total: String = extras?.getString("total").toString();
+        var extras: Bundle? = intent.extras
+        var total: String = extras?.getString("total").toString()
         paymentButton.setup(
             createOrder = CreateOrder { createOrderActions ->
                 Log.v(tag, "CreateOrder")
@@ -86,8 +86,8 @@ class PaymentButtonQuickStartActivity : AppCompatActivity() {
                 }
                 val sdf = SimpleDateFormat("yyyy-mm-dd")
                 val current = sdf.format(Date())
-                run("https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/checkout?username=fff&date=${current}&total_cost=${total.toFloat()}")
-                //setContentView(R.layout.activity_success)
+                // run("https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/checkout?username=fff&date=$current&total_cost=${total.toFloat()}")
+                // setContentView(R.layout.activity_success)
                 val i = Intent(this, Success::class.java)
                 i.putExtra("username", username)
                 startActivity(i)
@@ -109,7 +109,7 @@ class PaymentButtonQuickStartActivity : AppCompatActivity() {
         }
     }
 
-    //runs an API call
+    // runs an API call
     fun run(url: String) {
         val request = Request.Builder()
             .url(url)

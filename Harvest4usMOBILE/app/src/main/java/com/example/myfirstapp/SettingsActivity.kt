@@ -1,13 +1,11 @@
 package com.example.myfirstapp
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.PreferenceFragmentCompat
-import androidx.core.app.ActivityCompat.startActivityForResult
-
 import android.content.Intent
+import android.os.Bundle
 import android.view.MenuItem
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.preference.PreferenceFragmentCompat
 
 class SettingsActivity : AppCompatActivity() {
     private var username: String? = null

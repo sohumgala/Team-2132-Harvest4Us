@@ -1,12 +1,9 @@
 package com.example.myfirstapp
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
@@ -26,7 +23,6 @@ class CustomAdapterResource(private val mList: List<ResourceViewModel>, private 
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val ResourceViewModel = mList[position]
 
         // sets the text to the textview from our itemHolder class
@@ -34,11 +30,9 @@ class CustomAdapterResource(private val mList: List<ResourceViewModel>, private 
 
         holder.subtextView.text = ResourceViewModel.description
 
-
         holder.itemView.setOnClickListener {
             cellClickListenerResource.onCellClickListener(ResourceViewModel)
         }
-
     }
 
     // return the number of the items in the list
@@ -63,15 +57,15 @@ class CustomAdapterResource(private val mList: List<ResourceViewModel>, private 
                 val queryString = charSequence?.toString()?.toLowerCase()
 
                 val filterResults = Filter.FilterResults()
-                filterResults.values = if (queryString==null || queryString.isEmpty())
+                filterResults.values = if (queryString == null || queryString.isEmpty()) {
                     mList
-                else
+                } else {
                     mList.filter {
                         it.produceType.lowercase(Locale.getDefault()).contains(queryString)
                     }
+                }
                 return filterResults
             }
         }
     }
 }
-

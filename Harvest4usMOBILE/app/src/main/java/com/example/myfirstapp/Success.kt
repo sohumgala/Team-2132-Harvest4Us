@@ -1,12 +1,8 @@
 package com.example.myfirstapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
-import com.example.myfirstapp.MarketplaceActivity
-import com.example.myfirstapp.R
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Success : AppCompatActivity() {

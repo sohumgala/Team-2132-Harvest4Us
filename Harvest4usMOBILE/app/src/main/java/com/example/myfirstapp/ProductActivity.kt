@@ -1,10 +1,9 @@
 package com.example.myfirstapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapp.databinding.ActivityProductBinding
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -12,7 +11,7 @@ import java.io.IOException
 
 class ProductActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityProductBinding
+    private lateinit var binding: ActivityProductBinding
     val JSON: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
 
     private val client = OkHttpClient()
@@ -45,7 +44,7 @@ class ProductActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.name_text).text = name
         findViewById<TextView>(R.id.category_text).text = category
         findViewById<TextView>(R.id.usda_text).text = "USDA Grade " + usdaGrade
-        //findViewById<TextView>(R.id.quantity_text).text = availableQuantity.toString() + " " + unit
+        // findViewById<TextView>(R.id.quantity_text).text = availableQuantity.toString() + " " + unit
         findViewById<TextView>(R.id.date_text).text = "Last Updated " + dateEdited
         if (organic == 1) {
             findViewById<TextView>(R.id.organic_text).text = getString(R.string.organic)
@@ -55,8 +54,7 @@ class ProductActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.price_text).text = "$" + price.toString()
         findViewById<Button>(R.id.producer_button).text = "Producer Details"
 
-
-        var editQuantityInteger = 1;
+        var editQuantityInteger = 1
         val editQuantity = findViewById<EditText>(R.id.editQuantity)
         editQuantity.setText(editQuantityInteger.toString())
 
@@ -77,7 +75,8 @@ class ProductActivity : AppCompatActivity() {
 
         val cartButton = findViewById<Button>(R.id.cart_button)
         cartButton.setOnClickListener {
-            post("https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/add-to-cart",
+            post(
+                "https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/add-to-cart",
                 "\"consumer\" : \"$username\", \"producer\" : \"$producer\", \"product_id\" : \"$productID\", \"date_added\" : \"$dateEdited\", \"quantity\" : \"$editQuantityInteger\""
             )
             val i = Intent(this, CartActivity::class.java)

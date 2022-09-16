@@ -1,6 +1,5 @@
 package com.example.myfirstapp
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.widget.*
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import java.io.IOException
@@ -37,7 +35,6 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val ItemsViewModel = mList[position]
 
         var producer = ItemsViewModel.producer
@@ -74,7 +71,7 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
             if (holder.itemQuantity.text.toString() != "") {
                 var quantityChange = holder.itemQuantity.text.toString().toInt() - quantity
                 if (quantityChange < 0) {
-                    quantityChange *= -1;
+                    quantityChange *= -1
                     post(
                         "https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/delete-from-cart",
                         "\"producer\" : \"$producer\", \"consumer\" : \"$username\", \"product_id\" : \"$product_id\", \"quantity\" : \"$quantityChange\""
@@ -126,12 +123,13 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
                 val queryString = charSequence?.toString()?.toLowerCase()
 
                 val filterResults = Filter.FilterResults()
-                filterResults.values = if (queryString==null || queryString.isEmpty())
+                filterResults.values = if (queryString == null || queryString.isEmpty()) {
                     mList
-                else
+                } else {
                     mList.filter {
                         it.produceType.lowercase(Locale.getDefault()).contains(queryString)
                     }
+                }
                 return filterResults
             }
         }
@@ -153,4 +151,3 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
         })
     }
 }
-
