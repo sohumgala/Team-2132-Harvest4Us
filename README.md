@@ -21,7 +21,3 @@ Harvest4Us is an android application that connects local farmers to their commun
 * **Categories for the educational resources section hasn't been implemented yet**
 
 
-README - Team 2132 - Harvest4Us
-
-Jose Castejon, Nifemi Bolu, Sohum Gala, Ayesha Gul, Katherine Mittleider
-
