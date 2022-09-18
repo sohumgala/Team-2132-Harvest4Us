@@ -1,6 +1,6 @@
 # Harvest4Us 
-#Version 0.1.0
-Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
+# Version 0.1.0
+* Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
 
 ## Release Notes Version 0.1.0 
 
