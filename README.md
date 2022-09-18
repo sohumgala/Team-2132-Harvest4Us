@@ -1,19 +1,21 @@
-# Harvest4Us Version 0.1.0
-**Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.**
+# Harvest4Us 
+#Version 0.1.0
+Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
 
-## Release Notes
+## Release Notes Version 0.1.0 
 
 
-### **Version 0.1.0 Features**
+### **Features**
 * **Implemented new UI and color scheme**
 * **Added an educational resources page**
-* **transitioned old database from boto3 framework to Flask**
+* **Transitioned old backend from boto3 framework to Flask**
+* **Started the AWS RDS MySQL database**
 
-### **Version 0.1.0 Bug Fixes**
+### **Bug Fixes**
 * **The app used to not allow you to create an account because the backend database wasn't set up**
 * **Can now get past the login in screen and navigate the app**
 
-### **Version 0.1.0 Known Issues**
+### **Known Issues**
 * **The reset password function was not implemented for producer accounts**
 * **App crashes when trying to view cart**
 * **Categories for the educational resources section hasn't been implemented yet**
