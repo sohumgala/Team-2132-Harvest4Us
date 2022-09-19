@@ -1,22 +1,17 @@
 package com.example.myfirstapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.widget.*
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CheckoutActivity : AppCompatActivity(), CellClickListener {
-    //private lateinit var appBarConfiguration: AppBarConfiguration
+    // private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var adapter: CustomAdapterCart
+
     // ArrayList of class ItemsViewModel
     val data = ArrayList<ItemsViewModel>()
 
@@ -59,12 +54,11 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
             data.add(
                 ItemsViewModel(productID, producer, name, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, category, R.drawable.ic_android_black_24dp, quantity, consumerUsername)
             )
-            totalText.text = "Total: " + price.toString();
+            totalText.text = "Total: " + price.toString()
         }
 
         // This will pass the ArrayList to our Adapter
         val adapter = CustomAdapterCart(data, this)
-
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
@@ -88,7 +82,7 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
         }
     }
 
-    override fun onCellClickListener(data : ItemsViewModel) {
+    override fun onCellClickListener(data: ItemsViewModel) {
         Toast.makeText(this, data.produceType, Toast.LENGTH_SHORT).show()
     }
 }

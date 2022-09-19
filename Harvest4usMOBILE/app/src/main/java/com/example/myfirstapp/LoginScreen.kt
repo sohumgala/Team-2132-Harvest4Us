@@ -2,15 +2,14 @@ package com.example.myfirstapp
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.myfirstapp.databinding.LoginScreenBinding
 import okhttp3.*
-import java.io.IOException
 
 /**
  * The Login Screen fragment that acts as the default destination for the app and the main activity
@@ -23,21 +22,21 @@ class LoginScreen : Fragment() {
 
     // Client to handle API call
     private val client = OkHttpClient()
+
     // Response from API call
-    var responseResult: Response? = null;
+    var responseResult: Response? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-
         _binding = LoginScreenBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,7 +55,7 @@ class LoginScreen : Fragment() {
             val username = binding.etUserName.text
             val password = binding.etPassword.text
             // Run the API call
-            responseResult = DB.newUser(username, password);
+            responseResult = MockBackend.newUser(username, password)
             Thread.sleep(1700)
 
             // if inputted credentials match with database, enter the Marketplace
@@ -84,19 +83,19 @@ class LoginScreen : Fragment() {
         }
     }
 
-    // run does the API call to receive the response in the response string
-    fun run(url: String) {
-        val request = Request.Builder()
-            .url(url)
-            .build()
-
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {}
-            override fun onResponse(call: Call, response: Response) {
-                responseResult = response
-            }
-        })
-    }
+    // DEPRECATED: Previous team's backend call
+//    fun run(url: String) {
+//        val request = Request.Builder()
+//            .url(url)
+//            .build()
+//
+//        client.newCall(request).enqueue(object : Callback {
+//            override fun onFailure(call: Call, e: IOException) {}
+//            override fun onResponse(call: Call, response: Response) {
+//                responseResult = response
+//            }
+//        })
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

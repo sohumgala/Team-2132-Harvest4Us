@@ -1,26 +1,16 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.myfirstapp.databinding.FragmentForgotPasswordBinding
-import com.example.myfirstapp.databinding.LoginScreenBinding
 import okhttp3.*
-import java.io.IOException
-import org.json.JSONObject
-import java.io.DataInputStream
-import java.io.DataOutputStream
-import java.lang.Exception
-import java.net.URL
-import java.net.URLConnection
-import java.net.URLEncoder
-import okhttp3.FormBody
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-
 import okhttp3.RequestBody
+import java.io.IOException
 
 class ForgotPassword : Fragment() {
     // Binding to connect the fragment class with the layout
@@ -28,8 +18,9 @@ class ForgotPassword : Fragment() {
 
     // Client to handle API call
     private val client = OkHttpClient()
+
     // Response from API call
-    var responseResult: Response? = null;
+    var responseResult: Response? = null
 
     val JSON: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
     var responseString = ""
@@ -43,8 +34,9 @@ class ForgotPassword : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_forgot_password, container, false)
@@ -59,7 +51,8 @@ class ForgotPassword : Fragment() {
             val email = binding.email.text
             val password = binding.password.text
 
-            post("https://q74g0wn56a.execute-api.us-east-1.amazonaws.com/dev/reset-passwword/",
+            post(
+                "https://q74g0wn56a.execute-api.us-east-1.amazonaws.com/dev/reset-passwword/",
                 "\"username\" : \"$email\", \"password\" : \"$password\""
             )
 

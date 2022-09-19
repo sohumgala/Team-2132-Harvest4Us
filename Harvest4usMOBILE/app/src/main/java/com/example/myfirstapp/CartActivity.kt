@@ -1,30 +1,28 @@
 package com.example.myfirstapp
 
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.*
+import android.os.Build
 import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import okhttp3.*
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.IOException
-import java.math.BigDecimal
-import java.math.RoundingMode
+import com.google.android.material.snackbar.Snackbar
 import com.paypal.checkout.PayPalCheckout
 import com.paypal.checkout.config.CheckoutConfig
 import com.paypal.checkout.config.Environment
 import com.paypal.checkout.config.SettingsConfig
 import com.paypal.checkout.createorder.CurrencyCode
 import com.paypal.checkout.createorder.UserAction
-import androidx.annotation.RequiresApi
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_cart.*
+import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-
+import org.json.JSONArray
+import org.json.JSONObject
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class CartActivity : AppCompatActivity(), CellClickListener {
     private val clientIdWasUpdated by lazy {
@@ -35,6 +33,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 
     private val client = OkHttpClient()
     var responseString = ""
+
     // ArrayList of class ItemsViewModel
     var data = ArrayList<ItemsViewModel>()
 
@@ -67,8 +66,8 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
         val checkout = findViewById<Button>(R.id.checkoutButton)
         val totalText = findViewById<TextView>(R.id.totalText)
-        var total = 0.00;
-        val username: String? = intent.getStringExtra("username")
+        var total = 0.00
+        var username: String? = intent.getStringExtra("username")
 
         // getting the recyclerview by its id
         val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
@@ -76,22 +75,23 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
 
-        //Get the cart
+        // Get the cart
 
-//         if (username == null) {
-//             username = "fff"
-//         }
-
-        run("https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/get-cart/$username")
-        //Wait for a response
+        // run("https://crwpdbho85.execute-api.us-east-1.amazonaws.com/dev/get-cart/$username")
+        // THIS CODE IS TEMPORARY, until we get authentication enabled.
+        if (username == null) {
+            username = "fff"
+        }
+        responseString = MockBackend.getCart(username!!).body?.string()!!
+        // Wait for a response
         Thread.sleep(1500)
         if (responseString != null) {
             println("\n\n\nHERE IS THE ORIGINAL STRING: " + responseString)
-            //Format the response string
+            // Format the response string
             responseString = responseString.removePrefix("{\"message\":")
             responseString = responseString.removeSuffix("}")
 
-            //Make the string into a JSON array
+            // Make the string into a JSON array
             var jsonArray = JSONArray(responseString)
             println("HERE IS THE JSON ARRAY: " + jsonArray)
             // This loop will add each item and the attributes to the inventory list
@@ -102,14 +102,15 @@ class CartActivity : AppCompatActivity(), CellClickListener {
                     val producer = jsonObject.get("producer").toString()
                     val quantity = jsonObject.get("quantity") as Int
 
-                    run("https://f6e1mmza5c.execute-api.us-east-1.amazonaws.com/dev/get-by-id/$producer||$product_id")
+                    // run("https://f6e1mmza5c.execute-api.us-east-1.amazonaws.com/dev/get-by-id/$producer||$product_id")
+                    responseString = MockBackend.getById(producer, product_id).body?.string()!!
                     Thread.sleep(1500)
-                    //Format the response string
-                    responseString = responseString.removePrefix("{\"message\":")
-                    responseString = responseString.removeSuffix("}")
+                    // Format the response string
+//                    responseString = responseString.removePrefix("{\"message\":")
+//                    responseString = responseString.removeSuffix("}")
                     println("\n\nHERE IS THE NEW STRING, SHOULD BE OBJECT: " + responseString)
 
-                    //Make the string into a JSON object
+                    // Make the string into a JSON object
                     if (!responseString.contains(" not found")) {
 //                        var jsonArray2 = JSONArray(responseString)
 //                        val jsonObjectProduct: JSONObject = jsonArray2.getJSONObject(0)
@@ -142,7 +143,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
                                 username!!
                             )
                         )
-                        total += price * quantity;
+                        total += price * quantity
                     }
                 }
             }
@@ -152,7 +153,6 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 
         // This will pass the ArrayList to our Adapter
         val adapter = CustomAdapterCart(data, this)
-
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
@@ -196,23 +196,24 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         }
     }
 
-    override fun onCellClickListener(data : ItemsViewModel) {
+    override fun onCellClickListener(data: ItemsViewModel) {
         Toast.makeText(this, data.produceType, Toast.LENGTH_SHORT).show()
     }
 
-    fun run(url: String) {
-        val request = Request.Builder()
-            .url(url)
-            .build()
-
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {}
-            override fun onResponse(call: Call, response: Response) {
-                responseString = response.body?.string()!!
-                println(responseString)
-            }
-        })
-    }
+    // DEPRECATED: Previous team's backend call
+//    fun run(url: String) {
+//        val request = Request.Builder()
+//            .url(url)
+//            .build()
+//
+//        client.newCall(request).enqueue(object : Callback {
+//            override fun onFailure(call: Call, e: IOException) {}
+//            override fun onResponse(call: Call, response: Response) {
+//                responseString = response.body?.string()!!
+//                println(responseString)
+//            }
+//        })
+//    }
 
     private fun displayErrorSnackbar(errorMessage: String) {
         Snackbar.make(rootQuickStart, errorMessage, Snackbar.LENGTH_INDEFINITE)
