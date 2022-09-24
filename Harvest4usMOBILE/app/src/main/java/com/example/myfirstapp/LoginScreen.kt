@@ -2,6 +2,9 @@ package com.example.myfirstapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +12,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.myfirstapp.databinding.LoginScreenBinding
-import okhttp3.*
 
 /**
  * The Login Screen fragment that acts as the default destination for the app and the main activity
@@ -19,12 +21,7 @@ import okhttp3.*
 class LoginScreen : Fragment() {
     // Binding to connect the fragment class with the layout
     private var _binding: LoginScreenBinding? = null
-
-    // Client to handle API call
-    private val client = OkHttpClient()
-
-    // Response from API call
-    var responseResult: Response? = null
+    private var backend = FlaskBackend
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -50,27 +47,18 @@ class LoginScreen : Fragment() {
 
         // Login button runs API call, then checks the credentials against database
         binding.btnLogin.setOnClickListener {
-            val welcome = getString(R.string.str_welcome)
-            val exclamation = "!"
-            val username = binding.etUserName.text
-            val password = binding.etPassword.text
-            // Run the API call
-            responseResult = MockBackend.newUser(username, password)
-            Thread.sleep(1700)
-
-            // if inputted credentials match with database, enter the Marketplace
-            // if username is correct, but password is not, notify user that password is incorrect
-            // if username does not exist in the database, notify user
-            if (responseResult?.code == 200) {
-                Toast.makeText(activity, "$welcome $username$exclamation", Toast.LENGTH_LONG).show()
-                val intent = Intent(activity, MarketplaceActivity::class.java)
-                intent.putExtra("username", username.toString())
-                startActivity(intent)
-            } else if (responseResult?.code == 401) {
-                Toast.makeText(activity, "Invalid password", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(activity, "User does not exist", Toast.LENGTH_LONG).show()
+            val responseHandler = object : Handler(Looper.getMainLooper()) {
+                override fun handleMessage(msg: Message) {
+                    when (msg.what) {
+                        200 -> onLoginAuthenticated(msg.obj as String)
+                        401 -> onLoginAuthenticationFailure()
+                        else -> onLoginRequestNoConnection()
+                    }
+                }
             }
+            val username = binding.etUserName.text.toString()
+            val password = binding.etPassword.text.toString()
+            backend.login(username, password, responseHandler)
         }
 
         // Register button sends user to the register their username and password
@@ -83,22 +71,26 @@ class LoginScreen : Fragment() {
         }
     }
 
-    // DEPRECATED: Previous team's backend call
-//    fun run(url: String) {
-//        val request = Request.Builder()
-//            .url(url)
-//            .build()
-//
-//        client.newCall(request).enqueue(object : Callback {
-//            override fun onFailure(call: Call, e: IOException) {}
-//            override fun onResponse(call: Call, response: Response) {
-//                responseResult = response
-//            }
-//        })
-//    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+    /* Callbacks to handle login attempts. */
+    private fun onLoginRequestNoConnection() {
+        Toast.makeText(activity, "Failed to connect to server.", Toast.LENGTH_LONG).show()
+    }
+
+    private fun onLoginAuthenticated(username: String) {
+        val welcome = getString(R.string.str_welcome)
+        Toast.makeText(activity, "$welcome $username!", Toast.LENGTH_LONG).show()
+        val intent = Intent(activity, MarketplaceActivity::class.java)
+        intent.putExtra("username", username)
+        startActivity(intent)
+    }
+
+    private fun onLoginAuthenticationFailure() {
+        Toast.makeText(activity, "Invalid credentials", Toast.LENGTH_LONG).show()
+    }
+
 }
