@@ -25,7 +25,7 @@ def get_users():
     return json.dumps({"users": users})
 
 # checks if a (username, password) 
-@app.route("/login/", methods=["GET"])
+@app.route("/login/", methods=["POST"])
 def login():
     data = request.get_json()
     res = select("select * from users where username = %s and password = %s", (data["username"], data["password"]))
