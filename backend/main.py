@@ -28,10 +28,20 @@ def get_users():
 @app.route("/login/", methods=["POST"])
 def login():
     data = request.get_json()
-    res = select("select * from users where username = %s and password = %s", (data["username"], data["password"]))
-    if len(res) == 0:
+    fetch = select("select * from users where username = %s and password = %s", (data["username"], data["password"]))
+    if len(fetch) == 0:
         return Response("{}", status = 401)
     else:
+        return Response("{}", status = 200)
+
+@app.route("/register/", methods=["POST"])
+def register():
+    data = request.get_json()
+    fetch = select("select * from users where username = %s", (data["username"],))
+    if len(fetch) != 0:
+        return Response("{}", status = 401)
+    else:
+        modify("insert into users values (%s, %s, %s, %s)", (data["username"], data["first_name"], data["last_name"], data["password"]))
         return Response("{}", status = 200)
 
 if __name__ == "main":
