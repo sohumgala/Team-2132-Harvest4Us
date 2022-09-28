@@ -1,28 +1,28 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myfirstapp.databinding.RegisterScreenBinding
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
-import okhttp3.RequestBody
-import java.io.IOException
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ *
  */
 class RegisterScreen : Fragment() {
 
     private var _binding: RegisterScreenBinding? = null
 
-    val JSON: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
-
-    private val client = OkHttpClient()
+    private val backend = FlaskBackend
     var responseString = ""
 
     // This property is only valid between onCreateView and
@@ -42,32 +42,28 @@ class RegisterScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSubmit.setOnClickListener {
-            val first = binding.etFirst.text
-            val last = binding.etLast.text
-            val username = binding.etUsername.text
-            val password = binding.etPasswordRegister.text
-            post(
-                "https://q74g0wn56a.execute-api.us-east-1.amazonaws.com/dev/new-user",
-                "\"username\" : \"$username\", \"password\" : \"$password\", \"first_name\" : \"$first\", \"last_name\" : \"$last\""
-            )
-            findNavController().navigate(R.id.action_RegisterScreen_to_LoginScreen)
-        }
-    }
-
-    fun post(url: String, json: String) {
-        val body = RequestBody.create(JSON, json)
-        val request = Request.Builder()
-            .url(url)
-            .post(body)
-            .build()
-
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {}
-            override fun onResponse(call: Call, response: Response) {
-                responseString = response.body?.string()!!
-                println(responseString)
+            val first = binding.etFirst.text.toString()
+            val last = binding.etLast.text.toString()
+            val username = binding.etUsername.text.toString()
+            val password = binding.etPasswordRegister.text.toString()
+            val responseHandler = object : Handler(Looper.getMainLooper()) {
+                override fun handleMessage(msg: Message) {
+                    when (msg.what) {
+                        401 -> {
+                            Toast.makeText(activity, "User already exists. Please login or choose a different username.", Toast.LENGTH_LONG).show()
+                        }
+                        200 -> {
+                            Toast.makeText(activity, "User ${msg.obj} created successfully.", Toast.LENGTH_LONG).show()
+                            findNavController().navigate(R.id.action_RegisterScreen_to_LoginScreen)
+                        }
+                        else -> {
+                            Toast.makeText(activity, "Failed to connect to server.", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
             }
-        })
+            backend.newUser(username, password, first, last, responseHandler)
+        }
     }
 
     override fun onDestroyView() {
