@@ -55,4 +55,13 @@
     <string name="payment_button_quick_start_activity_payment_button_description">Please proceed through PayPal to complete your order.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Educational Resources -->
+    <string name="Resources">Resources</string>
+    <string name="Farmers_Markets">Farmers Markets</string>
+    <string name="Government_Nutrition_Program">Government Nutrition Program</string>
+    <string name="Healthy_Eating">Healthy Eating</string>
+    <string name="Community_Food_Support">Community Food Support</string>
+
+
 </resources>
