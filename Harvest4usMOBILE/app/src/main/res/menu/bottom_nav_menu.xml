@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_image"
+        android:title="Browse"
+        android:icon="@drawable/home_image_foreground"/>
+    <item
+        android:id="@+id/tractor_image"
+        android:title="Farms"
+        android:icon="@drawable/tractor_image_foreground"/>
+    <item
+        android:id="@+id/resource_image"
+        android:title="Education"
+        android:icon="@drawable/resources_image_foreground"/>
+    <item
+        android:id="@+id/account_image"
+        android:title="Account"
+        android:icon="@drawable/account_image_foreground"/>
+</menu>
