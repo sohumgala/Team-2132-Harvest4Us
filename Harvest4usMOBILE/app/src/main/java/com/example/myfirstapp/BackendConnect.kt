@@ -12,7 +12,25 @@ import java.io.IOException
 
 // Generic Interface for handling calls to backend database.
 interface BackendConnect {
-    fun newUser(username: Editable, password: Editable): Response
+    /**
+     * Make a request to create a new user to the backend, and send a message to the given
+     * responseHandler.
+     * @param username the username to create
+     * @param password the password associated with the user
+     * @param first the user's first name
+     * @param last the user's last name
+     * @param responseHandler a Handler that processes the response message. The message's
+     *                        'what' field will contain the HTTP response code and the message's
+     *                        'obj' field will contain the username, if the user is created
+     *                        successfully.
+     */
+    fun newUser(
+        username: String,
+        password: String,
+        first: String,
+        last: String,
+        responseHandler: Handler
+    )
     /**
      * Make a login request to the Flask backend, and send a message to the given
      * responseHandler.
@@ -67,8 +85,15 @@ open class MockConnect : BackendConnect {
             .build()
     }
 
-    override fun newUser(username: Editable, password: Editable): Response {
-        return mockResponse("New user test")
+    override fun newUser(
+        username: String,
+        password: String,
+        first: String,
+        last: String,
+        responseHandler: Handler
+    ) {
+        val msg = responseHandler.obtainMessage(200, username)
+        responseHandler.sendMessage(msg)
     }
 
     override fun login(
@@ -117,6 +142,7 @@ open class MockConnect : BackendConnect {
 /* Connect to Flask backend running on local dev machine. */
 open class FlaskConnect : BackendConnect {
     private val client = OkHttpClient()
+    private val mediaType = "application/json".toMediaType()
 
     // 10.0.2.2 is an alias for 127.0.0.1 in the Android emulator
     private val urlPrefix = "http://10.0.2.2:5000"
@@ -126,8 +152,33 @@ open class FlaskConnect : BackendConnect {
         return url.toString()
     }
 
-    override fun newUser(username: Editable, password: Editable): Response {
-        throw NotImplementedError()
+    override fun newUser(
+        username: String,
+        password: String,
+        first: String,
+        last: String,
+        responseHandler: Handler
+    ) {
+        val url = buildURL("register")
+        val data = buildJsonObject {
+            put("username", username)
+            put("password", password)
+            put("first_name", first)
+            put("last_name", last)
+        }
+        val requestBody = data.toString().toRequestBody(mediaType)
+        val request = Request.Builder().url(url).post(requestBody).build()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val msg = responseHandler.obtainMessage(-1, null)
+                responseHandler.sendMessage(msg)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val msg = responseHandler.obtainMessage(response.code, username)
+                responseHandler.sendMessage(msg)
+            }
+        })
     }
 
     override fun login(
@@ -141,7 +192,6 @@ open class FlaskConnect : BackendConnect {
             put("username", username)
             put("password", password)
         }
-        val mediaType = "application/json".toMediaType()
         val requestBody = credentials.toString().toRequestBody(mediaType)
         val request = Request.Builder().url(url).post(requestBody).build()
 
