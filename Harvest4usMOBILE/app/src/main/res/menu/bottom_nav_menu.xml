@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home_image"
-        android:title="Browse"
+        android:title="Home"
         android:icon="@drawable/home_image_foreground"/>
     <item
         android:id="@+id/tractor_image"
