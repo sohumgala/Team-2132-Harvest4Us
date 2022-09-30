@@ -1,14 +1,7 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.myfirstapp.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         setCurrentFragment(firstFragment)
 
-        bottomNavigationView.setOnNavigationItemSelectedListener {
+        bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home_image->setCurrentFragment(firstFragment)
 //                R.id.tractor_image->setCurrentFragment(secondFragment)
