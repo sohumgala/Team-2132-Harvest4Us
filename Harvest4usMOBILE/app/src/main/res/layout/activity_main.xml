@@ -23,22 +23,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/harvest4us_beige"
-        app:itemIconTint="@color/cardview_dark_background"
-        app:itemTextColor="@color/cardview_dark_background"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
     <include layout="@layout/content_main" />
 
     <androidx.appcompat.widget.Toolbar

@@ -11,6 +11,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MarketplaceActivity : AppCompatActivity(), CellClickListener {
     private lateinit var adapter: CustomAdapter
@@ -31,6 +33,37 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marketplace)
 
+        // creating the bottom navigation functionality
+        val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+
+        myBottomNavigationView.setOnNavigationItemSelectedListener{
+            when(it.itemId){
+                R.id.home_image-> {
+                    val intent = Intent(this, MarketplaceActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.tractor_image-> {
+                    val intent = Intent(this, ProducerActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.resource_image-> {
+                    val intent = Intent(this, ResourceActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.account_image-> {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+
+            }
+            true
+        }
+
+
         username = intent.getStringExtra("username")
 
         // getting the recyclerview by its id
@@ -48,36 +81,36 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
 
-        // Logout button goes to Login screen when clicked
-        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
-        logout.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Settings button goes to Settings screen when clicked
-        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
-        settings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        // Cart button goes to cart screen when clicked
-        val cart = findViewById<FloatingActionButton>(R.id.fab_cart)
-        cart.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        // Resources button goes to resources screen when clicked
-        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
-        resources.setOnClickListener {
-            val intent = Intent(this, ResourceActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
+//        // Logout button goes to Login screen when clicked
+//        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
+//        logout.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        // Settings button goes to Settings screen when clicked
+//        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
+//        settings.setOnClickListener {
+//            val intent = Intent(this, SettingsActivity::class.java)
+//            intent.putExtra("username", username)
+//            startActivity(intent)
+//        }
+//
+//        // Cart button goes to cart screen when clicked
+//        val cart = findViewById<FloatingActionButton>(R.id.fab_cart)
+//        cart.setOnClickListener {
+//            val intent = Intent(this, CartActivity::class.java)
+//            intent.putExtra("username", username)
+//            startActivity(intent)
+//        }
+//
+//        // Resources button goes to resources screen when clicked
+//        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
+//        resources.setOnClickListener {
+//            val intent = Intent(this, ResourceActivity::class.java)
+//            intent.putExtra("username", username)
+//            startActivity(intent)
+//        }
 
         val minPrice = findViewById<EditText>(R.id.editMinPrice)
         minPrice.setText(minPriceValue.toString())

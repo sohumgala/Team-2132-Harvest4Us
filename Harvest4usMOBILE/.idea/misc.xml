@@ -33,8 +33,9 @@
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/font/roboto_light.xml" value="0.35572916666666665" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_cart.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_checkout.xml" value="0.3255208333333333" />
-        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_main.xml" value="0.3255208333333333" />
-        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_marketplace.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_inventory.xml" value="0.15628166160081053" />
+        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_marketplace.xml" value="0.1" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_payment_button_quick_start.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_producer.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/activity_product.xml" value="0.3255208333333333" />
@@ -48,7 +49,7 @@
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/login_screen.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/marketplace.xml" value="0.19907407407407407" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/register_screen.xml" value="0.19907407407407407" />
-        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/settings_activity.xml" value="0.3255208333333333" />
+        <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/layout/settings_activity.xml" value="0.165" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/menu/menu_main.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/ayesh/Documents/GitHub/Team-2132-Harvest4Us/Harvest4usMOBILE/app/src/main/res/menu/nav_menu.xml" value="0.3255208333333333" />
