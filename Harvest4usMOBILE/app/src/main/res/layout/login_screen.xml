@@ -10,7 +10,7 @@
         android:id="@+id/textView4"
         android:layout_width="411dp"
         android:layout_height="55dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/montserrat_bold_font"
         android:text="Harvest4Us"
         android:textAlignment="center"
@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
         android:id="@+id/btn_register"
