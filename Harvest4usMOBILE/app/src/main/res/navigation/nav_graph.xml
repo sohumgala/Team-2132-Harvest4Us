@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoginScreen"
-        android:name="com.example.myfirstapp.LoginScreen"
+        android:name="com.amm.harvest4us.LoginScreen"
         android:label="@string/login_screen_label"
         tools:layout="@layout/login_screen">
 
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/HomeScreen"
-        android:name="com.example.myfirstapp.Marketplace"
+        android:name="com.amm.harvest4us.Marketplace"
         android:label="@string/home_screen_label"
         tools:layout="@layout/marketplace">
 
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/RegisterScreen"
-        android:name="com.example.myfirstapp.RegisterScreen"
+        android:name="com.amm.harvest4us.RegisterScreen"
         android:label="@string/register_screen_label"
         tools:layout="@layout/register_screen">
 
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.myfirstapp.SettingsFragment"
+        android:name="com.amm.harvest4us.SettingsFragment"
         android:label="Settings">
         <action
             android:id="@+id/action_settingsFragment_to_HomeScreen"
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.example.myfirstapp.ForgotPassword"
+        android:name="com.amm.harvest4us.ForgotPassword"
         android:label="Forgot Password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
