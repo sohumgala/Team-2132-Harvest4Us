@@ -13,6 +13,9 @@
 * **Added category titles to the Resource page so articles could be grouped appropriately**
 * **Transitioned away from the side bubble navigation system and implemented a bottom navigation bar**
 
+### **Known Issues**
+* **The bottom navigation bar does not work for the 'farms' button**
+
 
 ## Version 0.1.0 
 
