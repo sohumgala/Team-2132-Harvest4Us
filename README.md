@@ -1,9 +1,20 @@
 # Harvest4Us 
 * Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
-# Version 0.1.0
+# Release Notes
 
 
-## Release Notes Version 0.1.0 
+## Version 0.2.0
+
+
+### **Features**
+* **Fully functional backend now linked to the remote AWS database**
+* **Developed authentication functionality**
+* **Developed the "Register" capability**
+* **Added category titles to the Resource page so articles could be grouped appropriately**
+* **Transitioned away from the side bubble navigation system and implemented a bottom navigation bar**
+
+
+## Version 0.1.0 
 
 
 ### **Features**
