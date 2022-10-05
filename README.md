@@ -15,6 +15,7 @@
 
 ### **Known Issues**
 * **The bottom navigation bar does not work for the 'farms' button**
+* **Their is currently no way to log out of the app other than using the back button**
 
 
 ## Version 0.1.0 
