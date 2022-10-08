@@ -25,6 +25,7 @@
 
     <include layout="@layout/content_main" />
 
+    <!--Top toolbar formatting-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
