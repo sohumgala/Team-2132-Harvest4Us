@@ -11,16 +11,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.*
 
 class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
+    // Need adapters for each category (array)
     private lateinit var adapter: CustomAdapterResource
     private lateinit var adapter1: CustomAdapterResource
     private lateinit var adapter2: CustomAdapterResource
     private lateinit var adapter3: CustomAdapterResource
 
-    //Creates a place to store the returned messages from the API
+    // Creates a place to store the returned messages from the API
     private val client = OkHttpClient()
     var responseString = ""
 
-    //Holds the items
+    // Holds the items
     var data = ArrayList<ResourceViewModel>() // ArrayList for Farmers Market Resources
     var data1 = ArrayList<ResourceViewModel>() // ArrayList for Government Nutrition Programs Resources
     var data2 = ArrayList<ResourceViewModel>() // ArrayList for Healthy Eating Resources
