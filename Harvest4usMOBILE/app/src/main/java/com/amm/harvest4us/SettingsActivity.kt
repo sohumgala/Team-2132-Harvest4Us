@@ -18,8 +18,9 @@ class SettingsActivity : AppCompatActivity() {
         // creating the bottom navigation functionality
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
+        //logout button
         val myButton = findViewById<Button>(R.id.logOutButton)
-
+        //logout button functionality 
         myButton.setOnClickListener { startActivity(Intent(this, LoginScreen::class.java)) }
 
         myBottomNavigationView.setOnNavigationItemSelectedListener{
