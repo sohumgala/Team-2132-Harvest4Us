@@ -14,9 +14,9 @@
 * **Transitioned away from the side bubble navigation system and implemented a bottom navigation bar**
 
 ### **Known Issues**
-* **The bottom navigation bar does not work for the 'farms' button**
-* **Their is currently no way to log out of the app other than using the back button**
-
+* **The bottom navigation bar does not work for the 'farms' button and will cause the app to crash if selected**
+* **There is currently no way to log out of the app other than using the back button**
+* **There was some technical debt accured when adding the current navigation bar and Flask backend implementations**
 
 ## Version 0.1.0 
 
