@@ -80,37 +80,6 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
 
-//        // Logout button goes to Login screen when clicked
-//        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
-//        logout.setOnClickListener {
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-//        // Settings button goes to Settings screen when clicked
-//        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
-//        settings.setOnClickListener {
-//            val intent = Intent(this, SettingsActivity::class.java)
-//            intent.putExtra("username", username)
-//            startActivity(intent)
-//        }
-//
-//        // Cart button goes to cart screen when clicked
-//        val cart = findViewById<FloatingActionButton>(R.id.fab_cart)
-//        cart.setOnClickListener {
-//            val intent = Intent(this, CartActivity::class.java)
-//            intent.putExtra("username", username)
-//            startActivity(intent)
-//        }
-//
-//        // Resources button goes to resources screen when clicked
-//        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
-//        resources.setOnClickListener {
-//            val intent = Intent(this, ResourceActivity::class.java)
-//            intent.putExtra("username", username)
-//            startActivity(intent)
-//        }
-
         val minPrice = findViewById<EditText>(R.id.editMinPrice)
         minPrice.setText(minPriceValue.toString())
         val maxPrice = findViewById<EditText>(R.id.editMaxPrice)
