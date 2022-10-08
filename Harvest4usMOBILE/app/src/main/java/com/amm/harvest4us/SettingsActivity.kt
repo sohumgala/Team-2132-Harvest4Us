@@ -3,6 +3,7 @@ package com.amm.harvest4us
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -16,6 +17,10 @@ class SettingsActivity : AppCompatActivity() {
 
         // creating the bottom navigation functionality
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+
+        val myButton = findViewById<Button>(R.id.logOutButton)
+
+        myButton.setOnClickListener { startActivity(Intent(this, LoginScreen::class.java)) }
 
         myBottomNavigationView.setOnNavigationItemSelectedListener{
             when(it.itemId){
