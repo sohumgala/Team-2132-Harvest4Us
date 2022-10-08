@@ -149,36 +149,6 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
         recyclerview2.adapter = adapter2
         recyclerview3.adapter = adapter3
 
-//        //Logout button goes to Login screen when clicked
-//        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
-//        logout.setOnClickListener{
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
-//        }
-//
-////Settings button goes to Settings screen when clicked
-//        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
-//        settings.setOnClickListener{
-//            val intent = Intent(this, SettingsActivity::class.java)
-//            intent.putExtra("username", username)
-//            startActivity(intent)
-//        }
-//
-////Marketplace button goes to marketplace screen when clicked
-//        val marketplace = findViewById<FloatingActionButton>(R.id.fab_marketplace)
-//        marketplace.setOnClickListener{
-//            val intent = Intent(this, MarketplaceActivity::class.java)
-//            intent.putExtra("username", username)
-//            startActivity(intent)
-//        }
-//
-////Cart button goes to cart screen when clicked
-//        val cart = findViewById<FloatingActionButton>(R.id.fab_cart)
-//        cart.setOnClickListener{
-//            val intent = Intent(this, CartActivity::class.java)
-//            intent.putExtra("username", username)
-//            startActivity(intent)
-//        }
     }
 
     override fun onCellClickListener(data : ResourceViewModel) {

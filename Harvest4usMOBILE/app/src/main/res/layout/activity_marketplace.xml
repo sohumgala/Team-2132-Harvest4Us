@@ -15,57 +15,7 @@
         android:textSize="20sp"
         android:visibility="gone" />
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab_logout"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:contentDescription="Logout"-->
-<!--        android:src="@drawable/ic_baseline_logout_24" />-->
-
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab_settings"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:layout_marginBottom="86dp"-->
-<!--        android:src="@drawable/ic_baseline_settings_24"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:contentDescription="Settings" />-->
-
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab_cart"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:layout_marginBottom="156dp"-->
-<!--        android:src="@drawable/ic_baseline_shopping_cart_24"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:contentDescription="Cart" />-->
-
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab_resources"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:layout_marginBottom="226dp"-->
-<!--        android:contentDescription="Resources"-->
-<!--        android:src="@drawable/ic_baseline_article_24" />-->
+<!--Enter navbar code here -->
 
     <FrameLayout
         android:id="@+id/container"
