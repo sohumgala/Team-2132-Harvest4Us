@@ -27,7 +27,7 @@
             app:menu="@menu/bottom_nav_menu" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/logOutButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/harvest4us_green"
