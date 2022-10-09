@@ -132,10 +132,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
                 // if there is something in the search bar,
                 if (query != null) {
                     setContentView(R.layout.activity_marketplace)
-//                    val minPrice = findViewById<EditText>(R.id.editMinPrice)
-//                    minPrice.setText(minPriceValue.toString())
-//                    val maxPrice = findViewById<EditText>(R.id.editMaxPrice)
-//                    maxPrice.setText(maxPriceValue.toString())
+
                     // getting the recyclerview by its id
                     val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
 
@@ -221,18 +218,4 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
         return data
     }
 
-    // DEPRECATED: Old Team method of running backend call
-//    fun run(url: String) {
-//        val request = Request.Builder()
-//            .url(url)
-//            .build()
-//
-//        client.newCall(request).enqueue(object : Callback {
-//            override fun onFailure(call: Call, e: IOException) {}
-//            override fun onResponse(call: Call, response: Response) {
-//                responseString = response.body?.string()!!
-//                println(responseString)
-//            }
-//        })
-//    }
 }
