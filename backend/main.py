@@ -47,18 +47,12 @@ def register():
 @app.route("/get_all_produce/", methods=["GET"])
 def get_all_produce():
     produce = select("select business_name, concat(produceType, ' ', produceCategory) as 'product', organic, usdaGrade, price, availableQuantity from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1")
-    if len(produce) == 0:
-        return Response("{}", status = 401)
-    else:
-        return jsonify(produce), 200
+    return jsonify(produce), 200
 
 @app.route("/get_all_farms/", methods=["GET"])
 def get_all_farms():
     farms = select("select business_name, description, city, st from producer_users")
-    if len(farms) == 0:
-        return Response("{}", status = 401)
-    else:
-        return jsonify(farms), 200
+    return jsonify(farms), 200
 
 if __name__ == "main":
     with open("db_auth.json", "r") as f:
