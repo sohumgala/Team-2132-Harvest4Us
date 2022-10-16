@@ -2,14 +2,19 @@ package com.amm.harvest4us
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
+import com.amm.harvest4us.databinding.LoginScreenBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SettingsActivity : AppCompatActivity() {
     private var username: String? = null
+    private var backend = FlaskBackend
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,8 +24,10 @@ class SettingsActivity : AppCompatActivity() {
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
         val myButton = findViewById<Button>(R.id.logOutButton)
-
-        myButton.setOnClickListener { startActivity(Intent(this, LoginScreen::class.java)) }
+        myButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         myBottomNavigationView.setOnNavigationItemSelectedListener{
             when(it.itemId){
