@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.harvest4us.items.ProduceItem
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import java.io.IOException
@@ -14,9 +15,9 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 import java.util.*
 
-class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cellClickListener: CellClickListener) : RecyclerView.Adapter<CustomAdapterCart.ViewHolder>(), Filterable {
+class CustomAdapterCart(private var mList: List<ProduceItem>, private val cellClickListener: CellClickListener) : RecyclerView.Adapter<CustomAdapterCart.ViewHolder>(), Filterable {
 
-    private var data: List<ItemsViewModel> = mList
+    private var data: List<ProduceItem> = mList
 
     val JSON: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
 
@@ -39,7 +40,7 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
         var producer = ItemsViewModel.producer
         var dateEdited = ItemsViewModel.dateEdited
         var product_id = ItemsViewModel.product_id
-        var quantity = ItemsViewModel.quantity
+        var quantity = ItemsViewModel.quantityInOrder
         var username = ItemsViewModel.consumerUsername
 
         // sets the image to the imageview from our itemHolder class
@@ -53,7 +54,7 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
         val decimal = BigDecimal(3.14159265359).setScale(2, RoundingMode.HALF_EVEN)
         holder.priceText.setText(BigDecimal(ItemsViewModel.price.toDouble()).setScale(2, RoundingMode.HALF_EVEN).toString())
 
-        holder.itemQuantity.setText(ItemsViewModel.quantity.toString())
+        holder.itemQuantity.setText(ItemsViewModel.quantityInOrder.toString())
 
         holder.itemView.setOnClickListener {
             cellClickListener.onCellClickListener(ItemsViewModel)
@@ -114,7 +115,7 @@ class CustomAdapterCart(private var mList: List<ItemsViewModel>, private val cel
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun publishResults(charSequence: CharSequence?, filterResults: Filter.FilterResults) {
-                data = filterResults.values as List<ItemsViewModel>
+                data = filterResults.values as List<ProduceItem>
                 notifyDataSetChanged()
             }
 

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.amm.harvest4us.items.ProduceItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import okhttp3.*
 import org.json.JSONObject
@@ -12,7 +13,7 @@ import org.json.JSONObject
 class ProducerActivity : AppCompatActivity() {
     private val client = OkHttpClient()
     var responseString = ""
-    var data = ArrayList<ItemsViewModel>()
+    var data = ArrayList<ProduceItem>()
     private var username: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

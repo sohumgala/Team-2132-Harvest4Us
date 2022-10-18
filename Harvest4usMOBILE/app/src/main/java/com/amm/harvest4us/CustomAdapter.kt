@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.harvest4us.items.ProduceItem
 import java.util.*
 
-class CustomAdapter(private val mList: List<ItemsViewModel>, private val cellClickListener: CellClickListener) : RecyclerView.Adapter<CustomAdapter.ViewHolder>(), Filterable {
+class CustomAdapter(private val mList: List<ProduceItem>, private val cellClickListener: CellClickListener) : RecyclerView.Adapter<CustomAdapter.ViewHolder>(), Filterable {
 
-    private var data: List<ItemsViewModel> = mList
+    private var data: List<ProduceItem> = mList
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,18 +24,17 @@ class CustomAdapter(private val mList: List<ItemsViewModel>, private val cellCli
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ItemsViewModel = mList[position]
+        val produceItem = mList[position]
 
         // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(ItemsViewModel.image)
+        // holder.imageView.setImageResource(ItemsViewModel.image)
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = ItemsViewModel.produceType
-
-        holder.subtextView.text = ItemsViewModel.produceCategory
+        holder.textView.text = produceItem.produceCategory
+         holder.subtextView.text = produceItem.produceType
 
         holder.itemView.setOnClickListener {
-            cellClickListener.onCellClickListener(ItemsViewModel)
+            cellClickListener.onCellClickListener(produceItem)
         }
     }
 
@@ -59,7 +59,7 @@ class CustomAdapter(private val mList: List<ItemsViewModel>, private val cellCli
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun publishResults(charSequence: CharSequence?, filterResults: Filter.FilterResults) {
-                data = filterResults.values as List<ItemsViewModel>
+                data = filterResults.values as List<ProduceItem>
                 notifyDataSetChanged()
             }
 
