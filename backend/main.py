@@ -46,7 +46,7 @@ def register():
 
 @app.route("/get_all_produce/", methods=["GET"])
 def get_all_produce():
-    produce = select("select business_name, concat(produceType, ' ', produceCategory) as 'product', organic, usdaGrade, price, availableQuantity from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1")
+    produce = select("select product_id, business_name, produceType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1")
     return jsonify(produce), 200
 
 @app.route("/get_all_farms/", methods=["GET"])

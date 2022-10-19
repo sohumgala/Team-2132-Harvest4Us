@@ -6,6 +6,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.harvest4us.items.ProduceItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CheckoutActivity : AppCompatActivity(), CellClickListener {
@@ -13,7 +14,7 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
     private lateinit var adapter: CustomAdapterCart
 
     // ArrayList of class ItemsViewModel
-    val data = ArrayList<ItemsViewModel>()
+    val data = ArrayList<ProduceItem>()
 
     private var username: String? = null
 
@@ -52,7 +53,7 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
 //         the image with the count of view
         if ((productID != null) && (producer != null) && (name != null) && (unit != null) && (usdaGrade != null) && (active != null) && (availableQuantity != null) && (dateEdited != null) && (organic != null) && (price != null) && (category != null) && (quantity != null) && (consumerUsername != null)) {
             data.add(
-                ItemsViewModel(productID, producer, name, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, category, R.drawable.ic_android_black_24dp, quantity, consumerUsername)
+                ProduceItem(productID, producer, name, category, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, R.drawable.ic_android_black_24dp, quantity, consumerUsername)
             )
             totalText.text = "Total: " + price.toString()
         }
@@ -82,7 +83,7 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
         }
     }
 
-    override fun onCellClickListener(data: ItemsViewModel) {
+    override fun onCellClickListener(data: ProduceItem) {
         Toast.makeText(this, data.produceType, Toast.LENGTH_SHORT).show()
     }
 }

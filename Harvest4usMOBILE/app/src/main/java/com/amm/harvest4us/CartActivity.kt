@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.harvest4us.items.ProduceItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.paypal.checkout.PayPalCheckout
@@ -35,7 +36,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
     var responseString = ""
 
     // ArrayList of class ItemsViewModel
-    var data = ArrayList<ItemsViewModel>()
+    var data = ArrayList<ProduceItem>()
 
     @RequiresApi(Build.VERSION_CODES.M)
     private var username: String? = null
@@ -126,10 +127,11 @@ class CartActivity : AppCompatActivity(), CellClickListener {
                         val price = jsonObjectProduct.get("price") as Double
                         val produceCategory = jsonObjectProduct.get("produceCategory").toString()
                         data.add(
-                            ItemsViewModel(
+                            ProduceItem(
                                 product_id,
                                 producer,
                                 produceType,
+                                produceCategory,
                                 unit,
                                 usdaGrade,
                                 active,
@@ -137,7 +139,6 @@ class CartActivity : AppCompatActivity(), CellClickListener {
                                 dateEdited,
                                 organic,
                                 price,
-                                produceCategory,
                                 R.drawable.ic_android_black_24dp,
                                 quantity,
                                 username!!
@@ -196,7 +197,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         }
     }
 
-    override fun onCellClickListener(data: ItemsViewModel) {
+    override fun onCellClickListener(data: ProduceItem) {
         Toast.makeText(this, data.produceType, Toast.LENGTH_SHORT).show()
     }
 

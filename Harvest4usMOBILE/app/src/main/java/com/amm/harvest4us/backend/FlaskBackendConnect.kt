@@ -78,11 +78,35 @@ open class FlaskBackendConnect : BackendConnect {
     }
 
     override fun getAllProduce(responseHandler: Handler) {
-        throw NotImplementedError()
+        val url = buildURL("get_all_produce")
+        val request = Request.Builder().url(url).build()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val msg = responseHandler.obtainMessage(-1, null)
+                responseHandler.sendMessage(msg)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val msg = responseHandler.obtainMessage(response.code, response.body?.string())
+                responseHandler.sendMessage(msg)
+            }
+        })
     }
 
     override fun getAllFarms(responseHandler: Handler) {
-        throw NotImplementedError()
+        val url = buildURL("get_all_farms")
+        val request = Request.Builder().url(url).build()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val msg = responseHandler.obtainMessage(-1, null)
+                responseHandler.sendMessage(msg)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val msg = responseHandler.obtainMessage(response.code, response.body)
+                responseHandler.sendMessage(msg)
+            }
+        })
     }
 
     override fun resetPassword(email: String, password: String): Response {

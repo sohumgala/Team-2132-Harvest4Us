@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.harvest4us.items.ProduceItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import okhttp3.*
 import org.json.JSONArray
@@ -19,7 +20,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
     var responseString = ""
 
     // Holds the items
-    var data = ArrayList<ItemsViewModel>()
+    var data = ArrayList<ProduceItem>()
 
     private var producer: String? = null
     private var username: String? = null
@@ -85,7 +86,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
         }
     }
 
-    override fun onCellClickListener(data: ItemsViewModel) {
+    override fun onCellClickListener(data: ProduceItem) {
         // Gets all the data for the item clicked
         val name = data.produceType
         val category = data.produceCategory
@@ -94,7 +95,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
         val unit = data.unit
         val usdaGrade = data.usdaGrade
         val active = data.active
-        val availableQuantity = data.availableQuantity
+        val availableQuantity = data.quantityInStock
         val dateEdited = data.dateEdited
         val organic = data.organic
         val price = data.price
@@ -172,11 +173,11 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun displayItems(searchString: String): ArrayList<ItemsViewModel> {
+    fun displayItems(searchString: String): ArrayList<ProduceItem> {
         // reset the data array
         data.clear()
         // ArrayList of class ItemsViewModel
-        data = ArrayList<ItemsViewModel>()
+        data = ArrayList<ProduceItem>()
 
         // Get the list of items pertaining to the search string
         println("2 PRODUCER IS: " + producer)
@@ -208,8 +209,8 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
                     val price = jsonObject.get("price") as Double
                     val produceCategory = jsonObject.get("produceCategory").toString()
                     data.add(
-                        ItemsViewModel(
-                            product_id, producer, productType, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, produceCategory, R.drawable.ic_android_black_24dp, 1, username!!
+                        ProduceItem(
+                            product_id, producer, productType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, R.drawable.ic_android_black_24dp, 1, username!!
                         )
                     )
                 }
