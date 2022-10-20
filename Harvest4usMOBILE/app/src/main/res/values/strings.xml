@@ -63,5 +63,8 @@
     <string name="Healthy_Eating">Healthy Eating</string>
     <string name="Community_Food_Support">Community Food Support</string>
 
+    <!--Farms-->
+    <string name="Local_Farms">Local Farms</string>
+
 
 </resources>
