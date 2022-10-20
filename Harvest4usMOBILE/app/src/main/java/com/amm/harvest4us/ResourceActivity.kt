@@ -45,7 +45,7 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
                     startActivity(intent)
                 }
                 R.id.tractor_image-> {
-                    val intent = Intent(this, ProducerActivity::class.java)
+                    val intent = Intent(this, FarmsActivity::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)
                 }

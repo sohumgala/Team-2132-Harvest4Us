@@ -26,6 +26,10 @@
             android:exported="true"
             android:label="@string/title_activity_settings" />
         <activity
+            android:name=".FarmsActivity"
+            android:exported="true"
+            android:label="@string/Local_Farms"/>
+        <activity
             android:name=".MarketplaceActivity"
             android:exported="true"
             android:label="@string/title_activity_marketplace"
