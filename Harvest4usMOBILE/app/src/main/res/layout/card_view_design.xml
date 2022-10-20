@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_margin="10dp"
-    app:cardElevation="6dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="20dp"
+    android:translationZ="2dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="6dp"
+    app:contentPadding="5dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="272dp"
+        android:layout_height="191dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
         android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/imageview"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/subtextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:fontFamily="@font/roboto_light_font"
+            android:text="produceCategory"
+            android:textAlignment="center"
+            android:textColor="@color/mainFont"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="129dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="15dp"
+            android:layout_gravity="start"
+            android:fontFamily="@font/montserrat_bold_font"
             android:text="Item"
-            android:textSize="20sp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainFont"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/subtextView"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="produceCategory"
-            android:textAlignment="inherit"
-            android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="94dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
 
         <ImageView
             android:id="@+id/imageViewCart"
-            android:layout_width="wrap_content"
+            android:layout_width="35dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
