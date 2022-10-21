@@ -10,5 +10,10 @@
         android:title="Search"
         app:showAsAction="ifRoom|withText"
         app:actionViewClass="android.widget.SearchView" />
+    <item
+        android:id="@+id/nav_cart"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:title="Cart"
+        app:showAsAction="ifRoom|withText" />
 
 </menu>
