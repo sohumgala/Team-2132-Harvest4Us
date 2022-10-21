@@ -5,17 +5,17 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amm.harvest4us.items.ProduceItem
 import com.amm.harvest4us.items.jsonArrToProduceItem
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.*
 import org.json.JSONArray
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MarketplaceActivity : AppCompatActivity(), CellClickListener {
@@ -144,6 +144,10 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         val searchView = search?.actionView as SearchView
         searchView.queryHint = "Search something!"
 
+        val cartB = menu?.findItem(R.id.nav_cart)
+
+
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 // if there is something in the search bar,
@@ -173,6 +177,20 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
 
         return super.onCreateOptionsMenu(menu)
     }
+
+
+    // handle cart activities
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        if (id == R.id.nav_cart) {
+            val intent = Intent(this, CartActivity::class.java)
+            intent.putExtra("username", username)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 
     /**
      * Make a backend call to update the produce list using the query searchString.
