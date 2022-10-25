@@ -54,6 +54,12 @@ def get_all_farms():
     farms = select("select business_name, description, city, st from producer_users")
     return jsonify(farms), 200
 
+@app.route("/get_cart/", methods=["POST"])
+def get_cart():
+    data = request.get_json()
+    cart = select("select produceType, produceCategory, carts.quantity, round(price * availableQuantity, 2) as 'itemPrice' from (select * from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1) as active_inventory inner join carts on (carts.producer, carts.product_id) = (active_inventory.username, active_inventory.product_id) where carts.consumer = %s", (data["username"],))
+    return jsonify(cart), 200
+
 if __name__ == "main":
     with open("db_auth.json", "r") as f:
         db_auth_data = json.load(f)
