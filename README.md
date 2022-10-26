@@ -2,6 +2,19 @@
 * Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
 # Release Notes
 
+## Version 0.3.0
+
+
+### **Features**
+* Marketplace shows produce details from the backend 
+* Marketplace UI redesign for produce cards(now includes photos of produce) 
+* Cart button allows users to view items in their cart 
+
+### **Bug Fixes**
+* Farm button doesn’t crash app and takes users to the farm page now 
+
+### **Known Issues**
+* Spacing issues on the market place page  
 
 ## Version 0.2.0
 
