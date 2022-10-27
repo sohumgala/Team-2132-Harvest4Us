@@ -1,4 +1,5 @@
-USE farmerex;
+CREATE DATABASE harvest4us;
+USE harvest4us;
 
 DROP TABLE IF EXISTS consumer_allergies;
 DROP TABLE IF EXISTS inventory_allergies;
@@ -8,8 +9,6 @@ DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS consumer_users;
 DROP TABLE IF EXISTS producer_users;
 DROP TABLE IF EXISTS users;
-
-
 
 CREATE TABLE users(
     username varchar(50) NOT NULL UNIQUE,
