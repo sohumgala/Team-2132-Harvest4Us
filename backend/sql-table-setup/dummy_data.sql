@@ -1,4 +1,4 @@
-USE farmerex;
+USE harvest4us;
 
 -- users
 INSERT INTO users VALUES
