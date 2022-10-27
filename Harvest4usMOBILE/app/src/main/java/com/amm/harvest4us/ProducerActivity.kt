@@ -35,8 +35,7 @@ class ProducerActivity : AppCompatActivity() {
 //            responseString = responseString.removeSuffix("}")
             val jsonObject = JSONObject(responseString)
             nameText.text = jsonObject.get("business_name").toString()
-            addressText.text = jsonObject.get("business_street").toString() + ", " + jsonObject.get("business_city").toString() +
-                ", " + jsonObject.get("business_state").toString() + " " + jsonObject.get("business_zip").toString()
+            addressText.text = jsonObject.get("business_city").toString() + ", " + jsonObject.get("business_state").toString()
             descriptionText.text = jsonObject.get("about").toString()
         }
 
@@ -46,35 +45,6 @@ class ProducerActivity : AppCompatActivity() {
             i.putExtra("producer", name)
             i.putExtra("username", username)
             startActivity(i)
-        }
-
-        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
-        logout.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
-        settings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        val marketplace = findViewById<FloatingActionButton>(R.id.fab_marketplace)
-        marketplace.setOnClickListener {
-            val intent = Intent(this, MarketplaceActivity::class.java)
-            intent.putExtra("username", username)
-            println("PUTTING " + username)
-            startActivity(intent)
-        }
-
-        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
-        resources.setOnClickListener {
-            val intent = Intent(this, ResourceActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
         }
     }
 

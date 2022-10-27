@@ -28,7 +28,8 @@
         <activity
             android:name=".FarmsActivity"
             android:exported="true"
-            android:label="@string/Local_Farms"/>
+            android:label="@string/Local_Farms"
+            android:theme="@style/Theme.MyFirstApp.AppBarOverlay"/>
         <activity
             android:name=".MarketplaceActivity"
             android:exported="true"
