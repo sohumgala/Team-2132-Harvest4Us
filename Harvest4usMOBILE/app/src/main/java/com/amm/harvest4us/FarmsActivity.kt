@@ -18,8 +18,8 @@ import okhttp3.*
 import org.json.JSONArray
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class FarmsActivity : AppCompatActivity(), CellClickListener {
-    private lateinit var adapter: CustomAdapter
+class FarmsActivity : AppCompatActivity(), CellClickListenerFarms {
+    private lateinit var adapter: FarmsAdapter
 
     private var backend = FlaskBackend
     private val producerList = ArrayList<ProducerItem>()
@@ -65,21 +65,20 @@ class FarmsActivity : AppCompatActivity(), CellClickListener {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         updateProducerList("")
+    }
 
-        fun onCellClickListener(data: ProducerItem) {
-            val name = data.name
-            val city = data.city
-            val state = data.state
-            val description = data.description
+    override fun onCellClickListener(data: ProducerItem) {
+        val name = data.name
+        val city = data.city
+        val state = data.state
+        val description = data.description
 
-            val i = Intent(this, ProducerActivity::class.java)
-            i.putExtra("name", name)
-            i.putExtra("city", city)
-            i.putExtra("state", state)
-            i.putExtra("description", description)
-            startActivity(i)
-        }
-
+        val i = Intent(this, ProducerActivity::class.java)
+        i.putExtra("name", name)
+        i.putExtra("city", city)
+        i.putExtra("state", state)
+        i.putExtra("description", description)
+        startActivity(i)
     }
 
     /**
@@ -106,7 +105,7 @@ class FarmsActivity : AppCompatActivity(), CellClickListener {
      * Refresh the CustomAdapter and RecyclerView for displaying producer items.
      */
     fun updateProducerListView() {
-        adapter = CustomAdapter(producerList, this@FarmsActivity)
+        adapter = FarmsAdapter(producerList, this@FarmsActivity)
         val recyclerview = findViewById<RecyclerView>(R.id.farmView)
         recyclerview.adapter = adapter
     }
