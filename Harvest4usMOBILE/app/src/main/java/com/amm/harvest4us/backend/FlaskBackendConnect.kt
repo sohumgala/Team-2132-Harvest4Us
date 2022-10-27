@@ -103,7 +103,7 @@ open class FlaskBackendConnect : BackendConnect {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val msg = responseHandler.obtainMessage(response.code, response.body)
+                val msg = responseHandler.obtainMessage(response.code, response.body?.string())
                 responseHandler.sendMessage(msg)
             }
         })

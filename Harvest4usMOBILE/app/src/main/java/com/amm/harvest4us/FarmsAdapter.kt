@@ -1,5 +1,6 @@
 package com.amm.harvest4us
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,7 +34,7 @@ class FarmsAdapter(private val mList: List<ProducerItem>, private val cellClickL
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = producerItem.name
-        holder.subtextView.text = "$producerItem.city, $producerItem.state"
+        holder.subtextView.text = Resources.getSystem().getString(R.string.City_State, producerItem.city, producerItem.state)
         holder.textBody.text = producerItem.description
 
         holder.itemView.setOnClickListener {
