@@ -7,14 +7,14 @@
 
 ### **Features**
 * Marketplace shows produce details from the backend 
-* Marketplace UI redesign for produce cards(now includes photos of produce) 
+* Marketplace UI redesign for produce cards (now includes photos of produce) 
 * Cart button allows users to view items in their cart 
 
 ### **Bug Fixes**
 * Farm button doesn’t crash app and takes users to the farm page now 
 
 ### **Known Issues**
-* Spacing issues on the market place page  
+* Spacing issues on the marketplace page  
 
 ## Version 0.2.0
 
