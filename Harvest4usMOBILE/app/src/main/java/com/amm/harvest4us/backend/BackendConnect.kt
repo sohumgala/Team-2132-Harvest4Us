@@ -74,7 +74,14 @@ interface BackendConnect {
     ): Response
     fun checkout(current: String, total: String): Response
     fun getProducers(name: String): Response
-    fun getCart(username: String): Response
+
+    /**
+     * Make a request to the backend for the current user's cart.
+     * @param username The user's username
+     * @param responseHandler Handler to process response from backend. Format is identical
+     *                        to getAllProduce.
+     */
+    fun getCart(username: String, responseHandler: Handler)
     fun getById(producer: String, product_id: Int): Response
 }
 

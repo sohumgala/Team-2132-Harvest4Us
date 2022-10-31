@@ -2,21 +2,22 @@ package com.amm.harvest4us.items
 
 import org.json.JSONArray
 
-data class ProduceItem(val product_id: Int,
-                       val producer: String,
-                       val produceType: String,
-                       val produceCategory: String,
-                       val unit: String,
-                       val usdaGrade: String,
-                       val active: Int,
-                       val quantityInStock: Double,
-                       val dateEdited: String,
-                       val organic: Int,
-                       val price: Double,
-                       val image: Int,
-                       val quantityInOrder: Int,
-                       val consumerUsername: String
-                       )
+data class ProduceItem(
+    val product_id: Int,
+    val producer: String,
+    val produceType: String,
+    val produceCategory: String,
+    val unit: String,
+    val usdaGrade: String,
+    val active: Int,
+    val quantityInStock: Double,
+    val dateEdited: String,
+    val organic: Int,
+    val price: Double,
+    val image: Int,
+    val quantityInOrder: Int,
+    val consumerUsername: String
+)
 
 /** Convert a JSONArray to a ProduceItem. Items in the array must be given in the same order
  * as the ProduceItem fields. */
