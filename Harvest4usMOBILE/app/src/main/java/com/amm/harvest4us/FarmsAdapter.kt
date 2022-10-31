@@ -34,7 +34,8 @@ class FarmsAdapter(private val mList: List<ProducerItem>, private val cellClickL
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = producerItem.name
-        holder.subtextView.text = Resources.getSystem().getString(R.string.City_State, producerItem.city, producerItem.state)
+        val cityState = producerItem.city + ", " + producerItem.state
+        holder.subtextView.text = cityState
         holder.textBody.text = producerItem.description
 
         holder.itemView.setOnClickListener {

@@ -74,6 +74,7 @@ class FarmsActivity : AppCompatActivity(), CellClickListenerFarms {
         val description = data.description
 
         val i = Intent(this, ProducerActivity::class.java)
+        i.putExtra("username", username)
         i.putExtra("name", name)
         i.putExtra("city", city)
         i.putExtra("state", state)

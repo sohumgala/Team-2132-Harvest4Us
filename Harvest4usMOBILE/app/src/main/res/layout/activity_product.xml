@@ -104,7 +104,6 @@
         android:layout_marginTop="4dp"
         android:paddingTop="20dp"
         android:text="test"
-        android:textColor="#FF5722"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
