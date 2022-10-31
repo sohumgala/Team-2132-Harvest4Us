@@ -83,7 +83,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         if (username == null) {
             username = "fff"
         }
-        responseString = MockBackend.getCart(username!!).body?.string()!!
+        // responseString = MockBackend.getCart(username!!).body?.string()!!
         // Wait for a response
         Thread.sleep(1500)
         if (responseString != null) {
