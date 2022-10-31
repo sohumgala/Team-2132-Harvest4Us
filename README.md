@@ -15,6 +15,7 @@
 
 ### **Known Issues**
 * Spacing issues on the marketplace page  
+* Farms display is incorrect and the app crashes when trying to click on individual farms
 
 ## Version 0.2.0
 
