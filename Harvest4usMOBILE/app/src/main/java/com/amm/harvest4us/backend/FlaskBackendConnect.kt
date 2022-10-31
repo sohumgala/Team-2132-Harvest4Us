@@ -1,7 +1,6 @@
 package com.amm.harvest4us.backend
 
 import android.os.Handler
-import com.amm.harvest4us.backend.BackendConnect
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import okhttp3.*
@@ -37,7 +36,7 @@ open class FlaskBackendConnect : BackendConnect {
         }
         val requestBody = data.toString().toRequestBody(mediaType)
         val request = Request.Builder().url(url).post(requestBody).build()
-        client.newCall(request).enqueue(object: Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 val msg = responseHandler.obtainMessage(-1, null)
                 responseHandler.sendMessage(msg)
@@ -80,7 +79,7 @@ open class FlaskBackendConnect : BackendConnect {
     override fun getAllProduce(responseHandler: Handler) {
         val url = buildURL("get_all_produce")
         val request = Request.Builder().url(url).build()
-        client.newCall(request).enqueue(object: Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 val msg = responseHandler.obtainMessage(-1, null)
                 responseHandler.sendMessage(msg)
@@ -96,7 +95,7 @@ open class FlaskBackendConnect : BackendConnect {
     override fun getAllFarms(responseHandler: Handler) {
         val url = buildURL("get_all_farms")
         val request = Request.Builder().url(url).build()
-        client.newCall(request).enqueue(object: Callback {
+        client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 val msg = responseHandler.obtainMessage(-1, null)
                 responseHandler.sendMessage(msg)
@@ -134,8 +133,24 @@ open class FlaskBackendConnect : BackendConnect {
         throw NotImplementedError()
     }
 
-    override fun getCart(username: String): Response {
-        throw NotImplementedError()
+    override fun getCart(username: String, responseHandler: Handler) {
+        val url = buildURL("get_cart")
+        val requestData = buildJsonObject {
+            put("username", username)
+        }
+        val requestBody = requestData.toString().toRequestBody(mediaType)
+        val request = Request.Builder().url(url).post(requestBody).build()
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val msg = responseHandler.obtainMessage(200, null)
+                responseHandler.sendMessage(msg)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val msg = responseHandler.obtainMessage(response.code, response.body)
+                responseHandler.sendMessage(msg)
+            }
+        })
     }
 
     override fun getById(producer: String, product_id: Int): Response {
