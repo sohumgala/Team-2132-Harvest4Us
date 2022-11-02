@@ -65,6 +65,6 @@
 
     <!--Farms-->
     <string name="Local_Farms">Local Farms</string>
-
+    <string name="City_State">%1$s, %2$s</string>
 
 </resources>
