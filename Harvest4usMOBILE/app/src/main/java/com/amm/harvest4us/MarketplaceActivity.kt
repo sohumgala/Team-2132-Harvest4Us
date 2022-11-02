@@ -17,14 +17,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.*
 import org.json.JSONArray
 
-
 class MarketplaceActivity : AppCompatActivity(), CellClickListener {
     private lateinit var adapter: CustomAdapter
 
     // Creates a place to store the returned messages from the API
     private var backend = FlaskBackend
     private val produceList = ArrayList<ProduceItem>()
-
 
     var minPriceValue = 0
     var maxPriceValue = 10
@@ -38,29 +36,28 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         // creating the bottom navigation functionality
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
-        myBottomNavigationView.setOnNavigationItemSelectedListener{
-            when(it.itemId){
-                R.id.home_image-> {
+        myBottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.home_image -> {
                     val intent = Intent(this, MarketplaceActivity::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)
                 }
-                R.id.tractor_image-> {
+                R.id.tractor_image -> {
                     val intent = Intent(this, FarmsActivity::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)
                 }
-                R.id.resource_image-> {
+                R.id.resource_image -> {
                     val intent = Intent(this, ResourceActivity::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)
                 }
-                R.id.account_image-> {
+                R.id.account_image -> {
                     val intent = Intent(this, SettingsActivity::class.java)
                     intent.putExtra("username", username)
                     startActivity(intent)
                 }
-
             }
             true
         }
@@ -146,8 +143,6 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
 
         val cartB = menu?.findItem(R.id.nav_cart)
 
-
-
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 // if there is something in the search bar,
@@ -178,7 +173,6 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         return super.onCreateOptionsMenu(menu)
     }
 
-
     // handle cart activities
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id: Int = item.getItemId()
@@ -189,8 +183,6 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
 
     /**
      * Make a backend call to update the produce list using the query searchString.
@@ -211,7 +203,6 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         }
         backend.getAllProduce(responseHandler)
     }
-
 
     /**
      * Refresh the CustomAdapter and RecyclerView for displaying produce items.

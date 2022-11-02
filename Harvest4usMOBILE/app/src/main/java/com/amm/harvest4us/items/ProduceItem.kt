@@ -35,7 +35,7 @@ fun jsonArrToProduceItem(jsonArray: JSONArray): ProduceItem {
         jsonArray.get(9) as Int, // organic
         jsonArray.get(10) as Double, // price
         0, // image
-        0, // quantityInOrder
+        jsonArray.get(11) as Int, // quantityInOrder
         "" // consumerUsername
     )
 }

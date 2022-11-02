@@ -12,8 +12,15 @@ open class FlaskBackendConnect : BackendConnect {
     private val client = OkHttpClient()
     private val mediaType = "application/json".toMediaType()
 
+    // For running in Android Studio emulator.
     // 10.0.2.2 is an alias for 127.0.0.1 in the Android emulator
-    private val urlPrefix = "http://10.0.2.2:5000"
+    private val emulatorUrl = "http://10.0.2.2:5000"
+
+    // For running on a local android device. Requires running
+    // "adb reverse tcp:5000 tcp:5000" with the device connected
+    private val adbUrl = "http://localhost:5000"
+
+    private val urlPrefix = emulatorUrl
     private fun buildURL(endpoint: String): String {
         val url = StringBuilder(urlPrefix)
         url.append("/").append(endpoint).append("/")
@@ -102,7 +109,7 @@ open class FlaskBackendConnect : BackendConnect {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val msg = responseHandler.obtainMessage(response.code, response.body)
+                val msg = responseHandler.obtainMessage(response.code, response.body?.string())
                 responseHandler.sendMessage(msg)
             }
         })
@@ -147,7 +154,7 @@ open class FlaskBackendConnect : BackendConnect {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                val msg = responseHandler.obtainMessage(response.code, response.body)
+                val msg = responseHandler.obtainMessage(response.code, response.body?.string())
                 responseHandler.sendMessage(msg)
             }
         })

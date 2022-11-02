@@ -6,6 +6,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.amm.harvest4us.items.CartItem
 import com.amm.harvest4us.items.ProduceItem
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -59,7 +60,7 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapterCart(data, this)
+        val adapter = CustomAdapterCart(CartItem(data, data[0].price), this)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter

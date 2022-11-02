@@ -46,7 +46,7 @@ def register():
 
 @app.route("/get_all_produce/", methods=["GET"])
 def get_all_produce():
-    produce = select("select product_id, business_name, produceType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1")
+    produce = select("select product_id, business_name, produceType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, 0 from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1")
     return jsonify(produce), 200
 
 @app.route("/get_all_farms/", methods=["GET"])
@@ -57,7 +57,7 @@ def get_all_farms():
 @app.route("/get_cart/", methods=["POST"])
 def get_cart():
     data = request.get_json()
-    cart = select("select active_inventory.product_id, active_inventory.business_name, produceType, produceCategory, active_inventory.unit, active_inventory.usdaGrade, active_inventory.active, carts.quantity, active_inventory.dateEdited, active_inventory.organic, active_inventory.price, round(price * availableQuantity, 2) as 'itemPrice' from (select * from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1) as active_inventory inner join carts on (carts.producer, carts.product_id) = (active_inventory.username, active_inventory.product_id) where carts.consumer = %s", (data["username"],))
+    cart = select("select active_inventory.product_id, active_inventory.business_name, produceType, produceCategory, active_inventory.unit, active_inventory.usdaGrade, active_inventory.active, active_inventory.availableQuantity, active_inventory.dateEdited, active_inventory.organic, active_inventory.price, carts.quantity, round(price * carts.quantity, 2) as 'itemPrice' from (select * from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1) as active_inventory inner join carts on (carts.producer, carts.product_id) = (active_inventory.username, active_inventory.product_id) where carts.consumer = %s", (data["username"],))
     return jsonify(cart), 200
 
 if __name__ == "main":
