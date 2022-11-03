@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.amm.harvest4us.items.ProduceItem
 import com.amm.harvest4us.items.jsonArrToProduceItem
+import com.amm.harvest4us.items.jsonArrToProduceItemList
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.*
 import org.json.JSONArray
@@ -22,7 +23,7 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
 
     // Creates a place to store the returned messages from the API
     private var backend = FlaskBackend
-    private val produceList = ArrayList<ProduceItem>()
+    private var produceList : List<ProduceItem> = ArrayList()
 
     var minPriceValue = 0
     var maxPriceValue = 10
@@ -192,12 +193,7 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         val responseHandler = object : Handler(Looper.getMainLooper()) {
             override fun handleMessage(msg: Message) {
                 if (msg.what == -1) return // backend call failed
-                produceList.clear()
-                val newProduceData = JSONArray(msg.obj as String)
-                for (i in 0 until newProduceData.length()) {
-                    val arr = newProduceData.getJSONArray(i)
-                    produceList.add(jsonArrToProduceItem(arr))
-                }
+                produceList = jsonArrToProduceItemList(JSONArray(msg.obj as String))
                 updateProduceListView()
             }
         }

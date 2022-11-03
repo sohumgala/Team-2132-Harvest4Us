@@ -89,9 +89,9 @@ class ProductActivity : AppCompatActivity() {
         producerButton.text = "Go to producer profile"
         producerButton.setOnClickListener {
             val i = Intent(this, ProducerActivity::class.java)
-            i.putExtra("producer", producer)
+            // TODO: Figure out how to get other producer info here - JC
+            i.putExtra("name", producer)
             i.putExtra("username", username)
-            println("PUTTING " + username)
             startActivity(i)
         }
     }

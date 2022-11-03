@@ -61,8 +61,11 @@ open class MockBackendConnect : BackendConnect {
         return mockResponse("")
     }
 
-    override fun getByProducer(producer: String): Response {
-        return mockResponse(mockProduceList)
+    override fun getProduceByProducer(producer: String, responseHandler: Handler) {
+        throw NotImplementedError()
+    }
+
+    override fun changeCartQuantity(username: String, item: ProduceItem, newQuantity:Int, responseHandler: Handler) {
     }
 
     override fun filterItem(

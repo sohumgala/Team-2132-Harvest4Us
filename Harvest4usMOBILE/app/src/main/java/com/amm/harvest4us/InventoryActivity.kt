@@ -39,7 +39,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         // Displays all items, not using a specific search string
-        data = displayItems("")
+//        data = displayItems("")
 
         // This will pass the ArrayList to our Adapter
         adapter = CustomAdapter(data, this)
@@ -140,7 +140,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
                     // this creates a vertical layout Manager
                     recyclerview.layoutManager = LinearLayoutManager(applicationContext)
                     // Display the items pertaining to the search string
-                    displayItems(query)
+//                    displayItems(query)
                     // This will pass the ArrayList to our Adapter
                     val adapter = CustomAdapter(data, this@InventoryActivity)
 
@@ -159,7 +159,7 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
                     // this creates a vertical layout Manager
                     recyclerview.layoutManager = LinearLayoutManager(applicationContext)
                     // Display the items pertaining to the search string
-                    displayItems(newText)
+//                    displayItems(newText)
                     // This will pass the ArrayList to our Adapter
                     val adapter = CustomAdapter(data, this@InventoryActivity)
 
@@ -173,50 +173,50 @@ class InventoryActivity : AppCompatActivity(), CellClickListener {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun displayItems(searchString: String): ArrayList<ProduceItem> {
-        // reset the data array
-        data.clear()
-        // ArrayList of class ItemsViewModel
-        data = ArrayList<ProduceItem>()
-
-        // Get the list of items pertaining to the search string
-        println("2 PRODUCER IS: " + producer)
-//        run("https://f6e1mmza5c.execute-api.us-east-1.amazonaws.com/dev/get-by-producer/$producer")
-        responseString = MockBackend.getByProducer(producer!!).body!!.string()
-        // Wait for a response
-        Thread.sleep(1500)
-
-        if (responseString != null) {
-            // Format the response string
-//            responseString = responseString.removePrefix("{\"message\":")
-//            responseString = responseString.removeSuffix("}")
-
-            // Make the string into a JSON array
-            var jsonArray = JSONArray(responseString)
-            // This loop will add each item and the attributes to the inventory list
-            for (i in 0..jsonArray.length()) {
-                if (i < jsonArray.length()) {
-                    val jsonObject: JSONObject = jsonArray.getJSONObject(i)
-                    val product_id = jsonObject.get("product_id") as Int
-                    val producer = jsonObject.get("producer").toString()
-                    val productType = jsonObject.get("produceType").toString()
-                    val unit = jsonObject.get("unit").toString()
-                    val usdaGrade = jsonObject.get("usdaGrade").toString()
-                    val active = jsonObject.get("active") as Int
-                    val availableQuantity = jsonObject.get("availableQuantity") as Double
-                    val dateEdited = jsonObject.get("dateEdited").toString()
-                    val organic = jsonObject.get("organic") as Int
-                    val price = jsonObject.get("price") as Double
-                    val produceCategory = jsonObject.get("produceCategory").toString()
-                    data.add(
-                        ProduceItem(
-                            product_id, producer, productType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, R.drawable.ic_android_black_24dp, 1, username!!
-                        )
-                    )
-                }
-            }
-        }
-        return data
-    }
+//    fun displayItems(searchString: String): ArrayList<ProduceItem> {
+//        // reset the data array
+//        data.clear()
+//        // ArrayList of class ItemsViewModel
+//        data = ArrayList<ProduceItem>()
+//
+//        // Get the list of items pertaining to the search string
+//        println("2 PRODUCER IS: " + producer)
+////        run("https://f6e1mmza5c.execute-api.us-east-1.amazonaws.com/dev/get-by-producer/$producer")
+//        responseString = MockBackend.getProduceByProducer(producer!!).body!!.string()
+//        // Wait for a response
+//        Thread.sleep(1500)
+//
+//        if (responseString != null) {
+//            // Format the response string
+////            responseString = responseString.removePrefix("{\"message\":")
+////            responseString = responseString.removeSuffix("}")
+//
+//            // Make the string into a JSON array
+//            var jsonArray = JSONArray(responseString)
+//            // This loop will add each item and the attributes to the inventory list
+//            for (i in 0..jsonArray.length()) {
+//                if (i < jsonArray.length()) {
+//                    val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+//                    val product_id = jsonObject.get("product_id") as Int
+//                    val producer = jsonObject.get("producer").toString()
+//                    val productType = jsonObject.get("produceType").toString()
+//                    val unit = jsonObject.get("unit").toString()
+//                    val usdaGrade = jsonObject.get("usdaGrade").toString()
+//                    val active = jsonObject.get("active") as Int
+//                    val availableQuantity = jsonObject.get("availableQuantity") as Double
+//                    val dateEdited = jsonObject.get("dateEdited").toString()
+//                    val organic = jsonObject.get("organic") as Int
+//                    val price = jsonObject.get("price") as Double
+//                    val produceCategory = jsonObject.get("produceCategory").toString()
+//                    data.add(
+//                        ProduceItem(
+//                            product_id, producer, productType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, R.drawable.ic_android_black_24dp, 1, username!!
+//                        )
+//                    )
+//                }
+//            }
+//        }
+//        return data
+//    }
 
 }
