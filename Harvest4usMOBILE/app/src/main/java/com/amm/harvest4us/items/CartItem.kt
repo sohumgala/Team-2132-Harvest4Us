@@ -7,13 +7,16 @@ data class CartItem(
     val totalPrice: Double
 )
 
+/**
+ * Convert a JSONArray to a CartItem. This function expects that each entry in the jsonArray contain
+ * an extra field for the total price of each item type (should come from getCart backend
+ * call).
+ */
 fun jsonArrToCartItem(jsonArray: JSONArray): CartItem {
-    val items = ArrayList<ProduceItem>()
+    val items = jsonArrToProduceItemList(jsonArray)
     var totalPrice = 0.0
     for (i in 0 until jsonArray.length()) {
-        val produceItemJSON = jsonArray.getJSONArray(i)
-        items.add(jsonArrToProduceItem(produceItemJSON))
-        totalPrice += produceItemJSON.getDouble(produceItemJSON.length() - 1)
+        totalPrice += jsonArray.getJSONArray(i).getDouble(12)
     }
     return CartItem(items, totalPrice)
 }

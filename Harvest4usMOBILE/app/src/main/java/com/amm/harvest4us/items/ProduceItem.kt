@@ -39,3 +39,16 @@ fun jsonArrToProduceItem(jsonArray: JSONArray): ProduceItem {
         "" // consumerUsername
     )
 }
+
+/**
+ * Convert a JSONArray containing multiple JSON-formatted produceItems
+ * into a List of ProduceItems.
+ */
+fun jsonArrToProduceItemList(jsonArray: JSONArray): List<ProduceItem> {
+    val result = ArrayList<ProduceItem>()
+    for (i in 0 until jsonArray.length()) {
+        val arr = jsonArray.getJSONArray(i)
+        result.add(jsonArrToProduceItem(arr))
+    }
+    return result
+}

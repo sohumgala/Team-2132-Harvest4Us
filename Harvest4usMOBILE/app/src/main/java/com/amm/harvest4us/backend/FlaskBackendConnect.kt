@@ -1,6 +1,7 @@
 package com.amm.harvest4us.backend
 
 import android.os.Handler
+import com.amm.harvest4us.items.ProduceItem
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import okhttp3.*
@@ -119,8 +120,24 @@ open class FlaskBackendConnect : BackendConnect {
         throw NotImplementedError()
     }
 
-    override fun getByProducer(producer: String): Response {
-        throw NotImplementedError()
+    override fun getProduceByProducer(producer: String, responseHandler: Handler) {
+        val url = buildURL("get_produce_by_producer")
+        val requestData = buildJsonObject {
+            put("business_name", producer)
+        }
+        val requestBody = requestData.toString().toRequestBody(mediaType)
+        val request = Request.Builder().url(url).post(requestBody).build()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val msg = responseHandler.obtainMessage(-1, null)
+                responseHandler.sendMessage(msg)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val msg = responseHandler.obtainMessage(response.code, response.body?.string())
+                responseHandler.sendMessage(msg)
+            }
+        })
     }
 
     override fun filterItem(
@@ -149,7 +166,7 @@ open class FlaskBackendConnect : BackendConnect {
         val request = Request.Builder().url(url).post(requestBody).build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-                val msg = responseHandler.obtainMessage(200, null)
+                val msg = responseHandler.obtainMessage(-1, null)
                 responseHandler.sendMessage(msg)
             }
 
@@ -160,7 +177,40 @@ open class FlaskBackendConnect : BackendConnect {
         })
     }
 
+    override fun changeCartQuantity(username: String, item: ProduceItem, newQuantity: Int, responseHandler: Handler) {
+        val requestBody = buildJsonObject {
+            put("username", username)
+            put("business_name", item.producer)
+            put("product_id", item.product_id)
+            put("new_quantity", newQuantity)
+        }.toString().toRequestBody(mediaType)
+        makeRequest("change_quantity", requestBody, responseHandler)
+    }
+
     override fun getById(producer: String, product_id: Int): Response {
         throw NotImplementedError()
+    }
+
+    /**
+     * Helper to construct and make a HTTP request to the backend.
+     * @param endpoint The Flask backend endpoint to post to
+     * @param body the body of the HTTP request
+     * @param responseHandler the Handler that will receive the response code/message. A code
+     *                          of -1 indicates a failure to connect to the backend.
+     */
+    private fun makeRequest(endpoint: String, body: RequestBody, responseHandler: Handler) {
+        val url = buildURL(endpoint)
+        val request = Request.Builder().url(url).post(body).build()
+        client.newCall(request).enqueue(object: Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                val msg = responseHandler.obtainMessage(-1, null)
+                responseHandler.sendMessage(msg)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val msg = responseHandler.obtainMessage(response.code, response.body?.string())
+                responseHandler.sendMessage(msg)
+            }
+        })
     }
 }
