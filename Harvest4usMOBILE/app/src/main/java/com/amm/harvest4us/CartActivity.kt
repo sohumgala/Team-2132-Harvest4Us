@@ -22,6 +22,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
+
         val username = intent.getStringExtra("username")
 
         val logout = findViewById<FloatingActionButton>(R.id.fab_logout)

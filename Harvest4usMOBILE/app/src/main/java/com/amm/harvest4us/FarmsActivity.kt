@@ -110,4 +110,6 @@ class FarmsActivity : AppCompatActivity(), CellClickListenerFarms {
         val recyclerview = findViewById<RecyclerView>(R.id.farmView)
         recyclerview.adapter = adapter
     }
+
+
 }
