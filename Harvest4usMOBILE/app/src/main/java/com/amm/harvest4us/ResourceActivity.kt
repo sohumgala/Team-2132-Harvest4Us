@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -163,4 +164,16 @@ class ResourceActivity : AppCompatActivity(), CellClickListenerResource {
         menuInflater.inflate(R.menu.nav_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
+    // handle cart activities
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        if (id == R.id.nav_cart) {
+            val intent = Intent(this, CartActivity::class.java)
+            intent.putExtra("username", username)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
