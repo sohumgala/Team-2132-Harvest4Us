@@ -31,7 +31,7 @@ class CustomAdapterCart(private var cart: CartItem, private val cellClickListene
         holder.subtextView.text = produceItem.produceCategory
 
         holder.priceText.text =
-            (produceItem.price * produceItem.quantityInOrder).toString()
+            "$" + ((produceItem.price * produceItem.quantityInOrder).toString())
 
         holder.itemQuantity.setText(produceItem.quantityInOrder.toString())
 

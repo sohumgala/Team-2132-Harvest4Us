@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.amm.harvest4us.items.CartItem
 import com.amm.harvest4us.items.ProduceItem
 import com.amm.harvest4us.items.jsonArrToCartItem
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
 
@@ -24,10 +25,39 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 
         val username = intent.getStringExtra("username")
 
-        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
-        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
-        val marketplace = findViewById<FloatingActionButton>(R.id.fab_marketplace)
-        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
+        // creating the bottom navigation functionality
+        val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+
+        myBottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.home_image -> {
+                    val intent = Intent(this, MarketplaceActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.tractor_image -> {
+                    val intent = Intent(this, FarmsActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.resource_image -> {
+                    val intent = Intent(this, ResourceActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.account_image -> {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
+//        val logout = findViewById<FloatingActionButton>(R.id.fab_logout)
+//        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
+//        val marketplace = findViewById<FloatingActionButton>(R.id.fab_marketplace)
+//        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
 
         val responseHandler = object : Handler(Looper.getMainLooper()) {
             override fun handleMessage(msg: Message) {
@@ -39,28 +69,28 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         }
         backend.getCart(username!!, responseHandler)
 
-        logout.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        settings.setOnClickListener {
-            val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        marketplace.setOnClickListener {
-            val intent = Intent(this, MarketplaceActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
-
-        resources.setOnClickListener {
-            val intent = Intent(this, ResourceActivity::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
-        }
+//        logout.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        settings.setOnClickListener {
+//            val intent = Intent(this, SettingsActivity::class.java)
+//            intent.putExtra("username", username)
+//            startActivity(intent)
+//        }
+//
+//        marketplace.setOnClickListener {
+//            val intent = Intent(this, MarketplaceActivity::class.java)
+//            intent.putExtra("username", username)
+//            startActivity(intent)
+//        }
+//
+//        resources.setOnClickListener {
+//            val intent = Intent(this, ResourceActivity::class.java)
+//            intent.putExtra("username", username)
+//            startActivity(intent)
+//        }
     }
 
     override fun onCellClickListener(data: ProduceItem) {
@@ -76,6 +106,6 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         val totalText = findViewById<TextView>(R.id.totalText)
-        totalText.setText("Total: " + cart.totalPrice.toString())
+        totalText.setText("Total: $" + cart.totalPrice.toString())
     }
 }
