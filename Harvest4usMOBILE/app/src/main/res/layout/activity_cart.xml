@@ -88,6 +88,7 @@
             android:layout_gravity="bottom"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/montserrat_bold_font"
+            android:paddingStart="10dp"
             android:text="TextView"
             android:textAlignment="viewStart"
             android:textColor="@color/mainFont"
