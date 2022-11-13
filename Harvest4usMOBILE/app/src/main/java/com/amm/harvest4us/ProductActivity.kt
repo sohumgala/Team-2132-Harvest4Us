@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.amm.harvest4us.databinding.ActivityProductBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import java.io.IOException
@@ -25,6 +26,35 @@ class ProductActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product)
 
         username = intent.getStringExtra("username")
+
+        // creating the bottom navigation functionality
+        val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+
+        myBottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.home_image -> {
+                    val intent = Intent(this, MarketplaceActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.tractor_image -> {
+                    val intent = Intent(this, FarmsActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.resource_image -> {
+                    val intent = Intent(this, ResourceActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+                R.id.account_image -> {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    intent.putExtra("username", username)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
         val name: String? = intent.getStringExtra("name")
         val category: String? = intent.getStringExtra("category")
