@@ -60,7 +60,7 @@ class CheckoutActivity : AppCompatActivity(), CellClickListener {
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapterCart(CartItem(data, data[0].price), this)
+        val adapter = CustomAdapterCart(CartItem(data, data[0].price), this,this)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter

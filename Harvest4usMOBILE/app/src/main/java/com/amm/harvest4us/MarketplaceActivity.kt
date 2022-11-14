@@ -115,7 +115,7 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         val image = data.image
         val quantity = data.quantityInOrder
 
-        // Passes the item attributes to the product display screen
+        // Passes the item attributes to the product display screen?? is this necessary
         val i = Intent(this, ProductActivity::class.java)
         i.putExtra("name", name)
         i.putExtra("category", category)

@@ -15,16 +15,21 @@ import org.json.JSONArray
 
 class CartActivity : AppCompatActivity(), CellClickListener {
     private lateinit var adapter: CustomAdapterCart
+    private lateinit var username: String
+
 
     private lateinit var cart: CartItem
     private val backend = FlaskBackend
+    private var cartList : List<CartItem> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
+        username = intent.getStringExtra("username")!!
 
-        val username = intent.getStringExtra("username")
+
+
 
         // creating the bottom navigation functionality
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
@@ -60,9 +65,9 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 //        val marketplace = findViewById<FloatingActionButton>(R.id.fab_marketplace)
 //        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
 
-        val responseHandler = object : Handler(Looper.getMainLooper()) {
+        val responseHandler = object : Handler(Looper.getMainLooper()) {// defined response handler
             override fun handleMessage(msg: Message) {
-                if (msg.what == -1) return
+                if (msg.what == -1) return // http response code 200 worked 403 didnt't, -1 couldn't connect
                 val cartData = JSONArray(msg.obj as String)
                 cart = jsonArrToCartItem(cartData)
                 updateCartView()
@@ -93,13 +98,50 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 //            startActivity(intent)
 //        }
     }
+    //is called from Cart adapter to do backend call in Cart activity
+    fun changeItemQuantity(produceItem: ProduceItem, quantity: Int) {
+        //backend.changeCartQuanity(username, produce item, new quantity of item, response handler)
+        //same^ but for delete from cart set quantity to zero
+
+        //edit quantity to cart
+        val responseHandlerQuantity = object : Handler(Looper.getMainLooper()) {
+            // defined response handler
+            override fun handleMessage(msg: Message) {
+                if (msg.what == -1) {
+                    return
+                } else if (msg.what == 200) {
+                    //CALL REFRESHCART IN HERE
+                    refreshCart()
+                } else if (msg.what == 403) {
+                    return
+                }
+                // http response code 200 worked 403 didnt't, -1 couldn't connect
+                //val cartData = JSONArray(msg.obj as String)// not needed
+                updateCartView()
+            }
+        }
+        backend.changeCartQuantity(username,produceItem, quantity ,responseHandlerQuantity)
+    }
+
+
+    fun refreshCart() {
+        val responseHandler = object : Handler(Looper.getMainLooper()) {// defined response handler
+        override fun handleMessage(msg: Message) {
+            if (msg.what == -1) return // http response code 200 worked 403 didnt't, -1 couldn't connect
+            val cartData = JSONArray(msg.obj as String)
+            cart = jsonArrToCartItem(cartData)
+            updateCartView()
+        }
+        }
+        backend.getCart(username!!, responseHandler)
+    }
 
     override fun onCellClickListener(data: ProduceItem) {
         Toast.makeText(this, data.produceType, Toast.LENGTH_SHORT).show()
     }
 
     private fun updateCartView() {
-        adapter = CustomAdapterCart(cart, this)
+        adapter = CustomAdapterCart(cart, this, this)
 
         // Setting the Adapter with the recyclerview
         val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
