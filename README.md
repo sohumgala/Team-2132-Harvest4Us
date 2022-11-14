@@ -2,6 +2,22 @@
 * Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
 # Release Notes
 
+## Version 0.4.0
+
+
+### **Features**
+* Develop the Farms page along with individual farmer's profiles to display their produce
+* Updated the UI of the cart page and it's ability to display produce
+* Integrated Cardknox into the checkout page
+
+### **Bug Fixes**
+* App no longer crashes upon selecting a particular farm, and shows the produce they sell
+* Spacing on the marketplace page is now working as intended
+* All cart buttons in the app are functional and navigate the user to the cart
+
+### **Known Issues**
+* Cardknox SDK cannot be integrated into x86 emulators, so a separate branch is necessary to hold these changes
+
 ## Version 0.3.0
 
 
