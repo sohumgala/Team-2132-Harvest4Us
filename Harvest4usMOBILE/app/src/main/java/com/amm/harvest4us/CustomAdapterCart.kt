@@ -1,20 +1,16 @@
 package com.amm.harvest4us
 
 import android.content.Context
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewManager
 import android.widget.*
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.RecyclerView
 import com.amm.harvest4us.items.CartItem
-import java.util.Map.entry
-
 
 class CustomAdapterCart(private var cart: CartItem, private val cellClickListener: CellClickListener, private val context: Context) : RecyclerView.Adapter<CustomAdapterCart.ViewHolder>()/*, Filterable*/ {
-
-
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -46,15 +42,26 @@ class CustomAdapterCart(private var cart: CartItem, private val cellClickListene
         }
 
         holder.deleteButton.setOnClickListener {
-            //deletes items from the cart
+            // deletes items from the cart
             (context as CartActivity).changeItemQuantity(produceItem, 0)
-
+        }
+        holder.itemQuantity.setOnFocusChangeListener {
+                _: View, hasFocus: Boolean ->
+            if (!hasFocus) {
+                // refresh the text field with the value in the cart
+                holder.itemQuantity.setText(produceItem.quantityInOrder.toString())
+            }
         }
 
-        holder.itemQuantity.doAfterTextChanged {
-            // Looks like this was intended to handle a "quantity modifier" for individual items. - JC
-            //function to update the cart quanity
-            (context as CartActivity).changeItemQuantity(produceItem, holder.itemQuantity as Int)
+        holder.itemQuantity.doAfterTextChanged { text: Editable? ->
+            if (text != null) {
+                val quantity = (text.toString()).toIntOrNull()
+                if (quantity != null && (quantity != produceItem.quantityInOrder)) {
+                    (context as CartActivity).changeItemQuantity(produceItem, quantity)
+                }
+
+            }
+
         }
     }
 
