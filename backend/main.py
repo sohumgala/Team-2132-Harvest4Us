@@ -47,13 +47,13 @@ def register():
 
 @app.route("/get_all_produce/", methods=["GET"])
 def get_all_produce():
-    produce = select("select product_id, business_name, produceType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, 0 from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1")
+    produce = select("select product_id, business_name, inventory.produceType, inventory.produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, 0, images.image from producer_users inner join inventory on producer_users.username = inventory.producer inner join images on (inventory.produceType, inventory.produceCategory) = (images.produceType, images.produceCategory) where active = 1")
     return jsonify(produce), 200
 
 @app.route("/get_produce_by_producer/", methods=["POST"])
 def get_produce_by_producer():
     data = request.get_json()
-    produce = select("select product_id, business_name, produceType, produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, 0 from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1 and producer_users.business_name = %s", (data["business_name"],))
+    produce = select("select product_id, business_name, inventory.produceType, inventory.produceCategory, unit, usdaGrade, active, availableQuantity, dateEdited, organic, price, 0, images.image from producer_users inner join inventory on producer_users.username = inventory.producer inner join images on (inventory.produceType, inventory.produceCategory) = (images.produceType, images.produceCategory) where active = 1 and producer_users.business_name = %s", (data["business_name"],))
     return jsonify(produce), 200
 
 @app.route("/get_all_farms/", methods=["GET"])
@@ -64,7 +64,7 @@ def get_all_farms():
 @app.route("/get_cart/", methods=["POST"])
 def get_cart():
     data = request.get_json()
-    cart = select("select active_inventory.product_id, active_inventory.business_name, produceType, produceCategory, active_inventory.unit, active_inventory.usdaGrade, active_inventory.active, active_inventory.availableQuantity, active_inventory.dateEdited, active_inventory.organic, active_inventory.price, carts.quantity, round(price * carts.quantity, 2) as 'itemPrice' from (select * from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1) as active_inventory inner join carts on (carts.producer, carts.product_id) = (active_inventory.username, active_inventory.product_id) where carts.consumer = %s", (data["username"],))
+    cart = select("select active_inventory.product_id, active_inventory.business_name, active_inventory.produceType, active_inventory.produceCategory, active_inventory.unit, active_inventory.usdaGrade, active_inventory.active, active_inventory.availableQuantity, active_inventory.dateEdited, active_inventory.organic, active_inventory.price, carts.quantity, round(price * carts.quantity, 2) as 'itemPrice', images.image from (select * from producer_users inner join inventory on producer_users.username = inventory.producer where active = 1) as active_inventory inner join carts on (carts.producer, carts.product_id) = (active_inventory.username, active_inventory.product_id) inner join images on (active_inventory.produceType, active_inventory.produceCategory) = (images.produceType, images.produceCategory) where carts.consumer = %s", (data["username"],))
     return jsonify(cart), 200
 
 @app.route("/change_quantity/", methods=["POST"])

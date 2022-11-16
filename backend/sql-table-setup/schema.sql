@@ -68,6 +68,7 @@ CREATE TABLE inventory(
     active int,
     PRIMARY KEY (producer, product_id),
     UNIQUE (producer, product_id),
+    
     FOREIGN KEY (producer) REFERENCES producer_users (username) 
   	ON DELETE CASCADE
   	ON UPDATE CASCADE
@@ -116,4 +117,11 @@ CREATE TABLE orders(
     FOREIGN KEY (consumer) REFERENCES consumer_users (username) 
   	ON UPDATE CASCADE
   	ON DELETE CASCADE
+) engine = innodb;
+
+CREATE TABLE images(
+	produceType varchar(50) NOT NULL,
+    produceCategory varchar(50) NOT NULL,
+    image varchar(50) NOT NULL,
+    PRIMARY KEY (produceType, produceCategory)
 ) engine = innodb;
