@@ -110,6 +110,7 @@ class ProductActivity : AppCompatActivity() {
                 "\"consumer\" : \"$username\", \"producer\" : \"$producer\", \"product_id\" : \"$productID\", \"date_added\" : \"$dateEdited\", \"quantity\" : \"$editQuantityInteger\""
             )
             val i = Intent(this, CartActivity::class.java)
+            // Passes the item attributes to the cart display screen
             i.putExtra("username", username)
             startActivity(i)
         }

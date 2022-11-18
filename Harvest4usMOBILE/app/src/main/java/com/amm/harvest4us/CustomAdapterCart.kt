@@ -1,5 +1,7 @@
 package com.amm.harvest4us
 
+import android.content.Context
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +10,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.RecyclerView
 import com.amm.harvest4us.items.CartItem
 
-class CustomAdapterCart(private var cart: CartItem, private val cellClickListener: CellClickListener) : RecyclerView.Adapter<CustomAdapterCart.ViewHolder>()/*, Filterable*/ {
+class CustomAdapterCart(private var cart: CartItem, private val cellClickListener: CellClickListener, private val context: Context) : RecyclerView.Adapter<CustomAdapterCart.ViewHolder>()/*, Filterable*/ {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,11 +42,26 @@ class CustomAdapterCart(private var cart: CartItem, private val cellClickListene
         }
 
         holder.deleteButton.setOnClickListener {
-            // backend delete item from cart call will go here, if we end up using this - JC
+            // deletes items from the cart
+            (context as CartActivity).changeItemQuantity(produceItem, 0)
+        }
+        holder.itemQuantity.setOnFocusChangeListener {
+                _: View, hasFocus: Boolean ->
+            if (!hasFocus) {
+                // refresh the text field with the value in the cart
+                holder.itemQuantity.setText(produceItem.quantityInOrder.toString())
+            }
         }
 
-        holder.itemQuantity.doAfterTextChanged {
-            // Looks like this was intended to handle a "quantity modifier" for individual items. - JC
+        holder.itemQuantity.doAfterTextChanged { text: Editable? ->
+            if (text != null) {
+                val quantity = (text.toString()).toIntOrNull()
+                if (quantity != null && (quantity != produceItem.quantityInOrder)) {
+                    (context as CartActivity).changeItemQuantity(produceItem, quantity)
+                }
+
+            }
+
         }
     }
 
