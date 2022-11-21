@@ -45,11 +45,11 @@
             android:exported="true"
             android:label="Cart"
             android:theme="@style/Theme.MyFirstApp.AppBarOverlay" />
-        <activity
-            android:name=".CheckoutActivity"
-            android:exported="true"
-            android:label="Checkout"
-            android:theme="@style/Theme.MyFirstApp.AppBarOverlay" />
+<!--        <activity-->
+<!--            android:name=".CheckoutActivity"-->
+<!--            android:exported="true"-->
+<!--            android:label="Checkout"-->
+<!--            android:theme="@style/Theme.MyFirstApp.AppBarOverlay" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
