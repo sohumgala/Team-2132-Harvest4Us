@@ -1,5 +1,6 @@
 package com.amm.harvest4us.items
 
+import android.content.Context
 import org.json.JSONArray
 
 data class ProduceItem(
@@ -21,7 +22,9 @@ data class ProduceItem(
 
 /** Convert a JSONArray to a ProduceItem. Items in the array must be given in the same order
  * as the ProduceItem fields. */
-fun jsonArrToProduceItem(jsonArray: JSONArray): ProduceItem {
+fun jsonArrToProduceItem(context: Context, jsonArray: JSONArray): ProduceItem {
+    val imageString = jsonArray.get(12) as String
+    val image = context.resources.getIdentifier(imageString, "drawable", context.packageName)
     return ProduceItem(
         jsonArray.get(0) as Int, // product_id
         jsonArray.get(1) as String, // producer
@@ -34,7 +37,7 @@ fun jsonArrToProduceItem(jsonArray: JSONArray): ProduceItem {
         jsonArray.get(8) as String, // dateEdited
         jsonArray.get(9) as Int, // organic
         jsonArray.get(10) as Double, // price
-        0, // image
+        image, // image
         jsonArray.get(11) as Int, // quantityInOrder
         "" // consumerUsername
     )
@@ -44,11 +47,11 @@ fun jsonArrToProduceItem(jsonArray: JSONArray): ProduceItem {
  * Convert a JSONArray containing multiple JSON-formatted produceItems
  * into a List of ProduceItems.
  */
-fun jsonArrToProduceItemList(jsonArray: JSONArray): List<ProduceItem> {
+fun jsonArrToProduceItemList(context: Context, jsonArray: JSONArray): List<ProduceItem> {
     val result = ArrayList<ProduceItem>()
     for (i in 0 until jsonArray.length()) {
         val arr = jsonArray.getJSONArray(i)
-        result.add(jsonArrToProduceItem(arr))
+        result.add(jsonArrToProduceItem(context, arr))
     }
     return result
 }

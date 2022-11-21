@@ -28,6 +28,8 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 
         // creating the bottom navigation functionality
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
+        recyclerview.layoutManager = LinearLayoutManager(this)
 
         myBottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
@@ -108,7 +110,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
             override fun handleMessage(msg: Message) {
                 if (msg.what != 200) return // http response code 200 worked 403 didnt't, -1 couldn't connect
                 val cartData = JSONArray(msg.obj as String)
-                cart = jsonArrToCartItem(cartData)
+                cart = jsonArrToCartItem(this@CartActivity, cartData)
                 updateCartView()
             }
         }
@@ -125,7 +127,6 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         // Setting the Adapter with the recyclerview
         val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
         recyclerview.adapter = adapter
-        recyclerview.layoutManager = LinearLayoutManager(this)
 
         val totalText = findViewById<TextView>(R.id.totalText)
         totalText.setText("Total: $" + cart.totalPrice.toString())
