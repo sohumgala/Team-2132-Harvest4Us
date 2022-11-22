@@ -2,6 +2,9 @@ package com.amm.harvest4us
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.amm.harvest4us.databinding.ActivityProductBinding
@@ -141,5 +144,57 @@ class ProductActivity : AppCompatActivity() {
                 println(responseString)
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu, menu)
+
+//        // Initializes the search bar
+          val search = menu?.findItem(R.id.nav_search)
+          search?.setVisible(false)
+//        val searchView = search?.actionView as SearchView
+//        searchView.queryHint = "Search something!"
+//
+//        val cartB = menu?.findItem(R.id.nav_cart)
+//
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                // if there is something in the search bar,
+//                if (query != null) {
+//                    setContentView(R.layout.activity_marketplace)
+//                    val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
+//                    // this creates a vertical layout Manager
+//                    recyclerview.layoutManager = LinearLayoutManager(applicationContext)
+//                    // Display the items pertaining to the search string
+////                    updateProduceList(query)
+//                }
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                if (newText != null) {
+//                    setContentView(R.layout.activity_marketplace)
+//                    // getting the recyclerview by its id
+//                    val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
+//                    // this creates a vertical layout Manager
+//                    recyclerview.layoutManager = LinearLayoutManager(applicationContext)
+////                    updateProduceList(newText)
+//                }
+//                return true
+//            }
+//        })
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    // handle cart activities
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        if (id == R.id.nav_cart) {
+            val intent = Intent(this, CartActivity::class.java)
+            intent.putExtra("username", username)
+            startActivity(intent)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
