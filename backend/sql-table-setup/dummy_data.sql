@@ -41,3 +41,10 @@ INSERT INTO carts VALUES
 INSERT INTO orders VALUES 
 ("test@test.com", 1, "fff", "2021-11-20", 3, 0.00, 1.00, 0, 1, 0),
 ("fake@test.com", 2, "fff", "2021-11-20", 1, 0.00, 2.50, 0, 1, 0);
+
+-- images
+INSERT INTO images VALUES
+("red", "apple", "red_apple"),
+("granny smith", "apple", "green_apple"),
+("large", "banana", "banana"),
+("fresh green", "kale", "kale");

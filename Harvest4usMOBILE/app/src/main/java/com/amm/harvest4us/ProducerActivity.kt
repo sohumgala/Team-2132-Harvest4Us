@@ -100,7 +100,7 @@ class ProducerActivity : AppCompatActivity(), CellClickListener {
         val responseHandler = object : Handler(Looper.getMainLooper()) {
             override fun handleMessage(msg: Message) {
                 if (msg.what == -1) return
-                inventory = jsonArrToProduceItemList(JSONArray(msg.obj as String))
+                inventory = jsonArrToProduceItemList(this@ProducerActivity, JSONArray(msg.obj as String))
                 // frontend code needs to update whatever view is displaying the items here - JC
                 updateProduceInventoryListView()
             }

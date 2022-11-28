@@ -48,7 +48,7 @@
                 android:layout_height="204dp"
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
-                app:srcCompat="@drawable/apple" />
+                app:srcCompat="@drawable/green_apple" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -193,7 +193,7 @@ class MarketplaceActivity : AppCompatActivity(), CellClickListener {
         val responseHandler = object : Handler(Looper.getMainLooper()) {
             override fun handleMessage(msg: Message) {
                 if (msg.what == -1) return // backend call failed
-                produceList = jsonArrToProduceItemList(JSONArray(msg.obj as String))
+                produceList = jsonArrToProduceItemList(this@MarketplaceActivity, JSONArray(msg.obj as String))
                 updateProduceListView()
             }
         }
