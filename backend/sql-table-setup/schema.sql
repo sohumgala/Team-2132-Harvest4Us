@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS consumer_users;
 DROP TABLE IF EXISTS producer_users;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS images;
 
 CREATE TABLE users(
     username varchar(50) NOT NULL UNIQUE,

@@ -5,17 +5,17 @@ print(resp.json())
 print
 
 print("Login Success:")
-resp1 = requests.post("http://127.0.0.1:5000/login/", json = {"username": "fff", "password": "ggg"})
+resp1 = requests.post("http://127.0.0.1:5000/login/", json = {"username": "fred123", "password": "fred_password"})
 print(resp1.status_code) # should be 200
 print()
 
 print("Login Fail:")
-resp2 = requests.post("http://127.0.0.1:5000/login/", json = {"username": "fff", "password": "gggg"})
+resp2 = requests.post("http://127.0.0.1:5000/login/", json = {"username": "fred123", "password": "gggg"})
 print(resp2.status_code) # should be 401
 print()
 
 print("Register fail:")
-resp3 = requests.post("http://127.0.0.1:5000/register/", json = {"username": "fff", "first_name": "dummy_first", "last_name": "dummy_last", "password": "dummy_pass"})
+resp3 = requests.post("http://127.0.0.1:5000/register/", json = {"username": "fred123", "first_name": "dummy_first", "last_name": "dummy_last", "password": "dummy_pass"})
 print(resp3.status_code) # should be 401
 print()
 
@@ -37,13 +37,13 @@ print(resp6.status_code)
 print()
 
 print("Get Cart:")
-resp7 = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fff"})
+resp7 = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fred123"})
 print(resp7.json())
 print(resp7.status_code)
 print()
 
 print("Get Produce By Producer:")
-resp8 = requests.post("http://127.0.0.1:5000/get_produce_by_producer/", json = {"business_name": "A Business"})
+resp8 = requests.post("http://127.0.0.1:5000/get_produce_by_producer/", json = {"business_name": "Patrick's Produce"})
 print(resp8.json())
 print(resp8.status_code)
 print()
@@ -52,44 +52,44 @@ print()
 # Note this set of operations takes the database back to its original state
 # delete item
 print("Delete item from cart:")
-resp9 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "A Business", "product_id": 1, "username": "fff", "new_quantity": 0})
+resp9 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "Patrick's Produce", "product_id": 1, "username": "fred123", "new_quantity": 0})
 print(resp9.status_code)
 
-resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fff"})
+resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fred123"})
 print(resp_cart.json())
 print()
 # re add item
 print("Readd item to cart:")
-resp10 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "A Business", "product_id": 1, "username": "fff", "new_quantity": 3})
+resp10 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "Patrick's Produce", "product_id": 1, "username": "fred123", "new_quantity": 3})
 print(resp10.status_code)
 
-resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fff"})
+resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fred123"})
 print(resp_cart.json())
 print()
 
 # increase quantity
 print("Increase item quantity in cart:")
-resp11 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "A Business", "product_id": 1, "username": "fff", "new_quantity": 4})
+resp11 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "Patrick's Produce", "product_id": 1, "username": "fred123", "new_quantity": 4})
 print(resp11.status_code)
 
-resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fff"})
+resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fred123"})
 print(resp_cart.json())
 print()
 
 # decrease quantity
 print("Decrease item quantity in cart:")
-resp12 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "A Business", "product_id": 1, "username": "fff", "new_quantity": 3})
+resp12 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "Patrick's Produce", "product_id": 1, "username": "fred123", "new_quantity": 3})
 print(resp12.status_code)
 
-resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fff"})
+resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fred123"})
 print(resp_cart.json())
 print()
 
 # add more than available (nop)
 print("Try to add more to cart than available(noop)")
-resp13 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "A Business", "product_id": 1, "username": "fff", "new_quantity": 50})
+resp13 = requests.post("http://127.0.0.1:5000/change_quantity/", json = {"business_name": "Patrick's Produce", "product_id": 1, "username": "fred123", "new_quantity": 50})
 print(resp13.status_code)
 
-resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fff"})
+resp_cart = requests.post("http://127.0.0.1:5000/get_cart/", json = {"username": "fred123"})
 print(resp_cart.json())
 print()
