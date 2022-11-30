@@ -6,7 +6,7 @@
 To run the Harvest4Us app, you will first need to set up the backend. Once the backend is up and running, you can then build and run the app via Android Studio.
 
 ## Backend Setup
-The backend is comprised of a Flask HTTP server connected to a MYSQL database. This section will show how to setup the backend and database locally.
+The backend is comprised of a Flask HTTP server connected to a MySQL database. This section will show how to setup the backend and database locally.
 
 ### Local Database setup (Only needs to be done once)
 
@@ -18,15 +18,10 @@ Once you have MySQL installed, you will need to:
 
 ``` json
 { 
-
     "user": "your_username", 
-
     "password": "your_password", 
-
     "host": "127.0.0.1", 
-
     "port": 3306, 
-
     "database": "harvest4us" 
 } 
 ```
@@ -46,8 +41,8 @@ The backend requires a few Python dependencies. All of these dependencies can be
 ## Running the Backend
 
 Once the database is setup and all of the dependencies are installed, you can now run the backend. Navigate to the backend folder in your terminal and run the following commands:
-* export FLASK_APP=main
-* flask run
+* `export FLASK_APP=main`
+* `flask run`
 
 The backend will now be running in the terminal. Leave the terminal open to keep the backend running.
 
