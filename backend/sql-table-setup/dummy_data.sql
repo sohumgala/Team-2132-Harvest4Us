@@ -2,24 +2,24 @@ USE harvest4us;
 
 -- users
 INSERT INTO users VALUES
-( "fff", "Fred", "Fred", "ggg"),
+( "fred123", "Fred", "Fred", "fred_password"),
 ("test@test.com", "Alice", "Alison", "password"),
 ("fake@test.com", "Fake", "Name", "password");
 
 -- producers
 INSERT INTO producer_users VALUES
-("test@test.com", "Test Business", "11345", "ABC Lane", "A City", "GA", "A VERY Busy Buisness"),
-("fake@test.com", "A Business", "443251", "Street Avenue", "New City", "GA", "A Busy Business");
+("test@test.com", "Alice's Apple Farm", "11345", "ABC Lane", "Atlanta", "GA", "Georgia's Best Apple Farm"),
+("fake@test.com", "Patrick's Produce", "443251", "Street Avenue", "Decatur", "GA", "The Freshest Produce");
 
 -- consumers
 INSERT INTO consumer_users VALUES
-("fff", "11345", "DEC Lane", "A City", "GA");
+("fred123", "11345", "DEC Lane", "A City", "GA");
 
 -- consumer_allergies
 INSERT INTO consumer_allergies VALUES
-("fff", "peanut"),
-("fff", "egg"),
-("fff", "dairy");
+("fred123", "peanut"),
+("fred123", "egg"),
+("fred123", "dairy");
 
 -- inventory
 INSERT INTO inventory VALUES 
@@ -34,13 +34,13 @@ INSERT INTO inventory_allergies VALUES
 
 -- carts
 INSERT INTO carts VALUES 
-("test@test.com", 2, "fff", "2021-11-10", 2),
-("fake@test.com", 1, "fff", "2021-11-10", 3); 
+("test@test.com", 2, "fred123", "2021-11-10", 2),
+("fake@test.com", 1, "fred123", "2021-11-10", 3); 
     
 -- orders
 INSERT INTO orders VALUES 
-("test@test.com", 1, "fff", "2021-11-20", 3, 0.00, 1.00, 0, 1, 0),
-("fake@test.com", 2, "fff", "2021-11-20", 1, 0.00, 2.50, 0, 1, 0);
+("test@test.com", 1, "fred123", "2021-11-20", 3, 0.00, 1.00, 0, 1, 0),
+("fake@test.com", 2, "fred123", "2021-11-20", 1, 0.00, 2.50, 0, 1, 0);
 
 -- images
 INSERT INTO images VALUES
