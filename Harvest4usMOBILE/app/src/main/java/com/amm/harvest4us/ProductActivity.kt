@@ -78,7 +78,7 @@ class ProductActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.name_text).text = name
         findViewById<TextView>(R.id.category_text).text = category
         findViewById<TextView>(R.id.usda_text).text = "USDA Grade " + usdaGrade
-        // findViewById<TextView>(R.id.quantity_text).text = availableQuantity.toString() + " " + unit
+        findViewById<TextView>(R.id.quantity_text).text = "Stock: " + availableQuantity.toString() + " " + unit
         findViewById<TextView>(R.id.date_text).text = "Last Updated " + dateEdited
         if (organic == 1) {
             findViewById<TextView>(R.id.organic_text).text = getString(R.string.organic)
