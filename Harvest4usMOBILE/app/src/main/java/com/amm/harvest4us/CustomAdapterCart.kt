@@ -32,8 +32,9 @@ class CustomAdapterCart(private var cart: CartItem, private val cellClickListene
 
         holder.subtextView.text = produceItem.produceCategory
 
-        holder.priceText.text =
-            "$" + ((produceItem.price * produceItem.quantityInOrder).toString())
+        val price = produceItem.price * produceItem.quantityInOrder
+        val priceString = String.format("%.02f", price)
+        holder.priceText.text = "$${priceString}"
 
         holder.itemQuantity.setText(produceItem.quantityInOrder.toString())
 
