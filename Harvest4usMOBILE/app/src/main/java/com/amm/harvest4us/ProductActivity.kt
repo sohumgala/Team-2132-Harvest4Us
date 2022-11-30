@@ -74,6 +74,7 @@ class ProductActivity : AppCompatActivity() {
         val quantity: Int? = intent.getIntExtra("quantity", 0)
         val username: String? = intent.getStringExtra("username")
 
+        findViewById<ImageView>(R.id.image_view).setImageResource(image!!)
         findViewById<TextView>(R.id.name_text).text = name
         findViewById<TextView>(R.id.category_text).text = category
         findViewById<TextView>(R.id.usda_text).text = "USDA Grade " + usdaGrade
@@ -84,7 +85,8 @@ class ProductActivity : AppCompatActivity() {
         } else {
             findViewById<TextView>(R.id.organic_text).text = getString(R.string.not_organic)
         }
-        findViewById<TextView>(R.id.price_text).text = "$" + price.toString()
+        val priceString = String.format("%.02f", price)
+        findViewById<TextView>(R.id.price_text).text = "$${priceString}"
         findViewById<Button>(R.id.producer_button).text = "Producer Details"
 
         var editQuantityInteger = 1

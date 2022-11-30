@@ -129,6 +129,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         recyclerview.adapter = adapter
 
         val totalText = findViewById<TextView>(R.id.totalText)
-        totalText.setText("Total: $" + cart.totalPrice.toString())
+        val priceString = String.format("%.02f", cart.totalPrice)
+        totalText.setText("Total: $${priceString}")
     }
 }
