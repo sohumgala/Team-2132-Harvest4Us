@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="272dp"
-        android:layout_height="191dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="5dp">
@@ -47,13 +47,15 @@
             android:layout_gravity="center"
             android:layout_margin="10dp" />
 
-        <ImageView
-            android:id="@+id/imageViewCart"
-            android:layout_width="35dp"
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
+            android:fontFamily="@font/montserrat_bold_font"
+            android:text="TextView"
+            android:textColor="@color/mainFont"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

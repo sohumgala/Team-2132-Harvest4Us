@@ -31,7 +31,9 @@ class CustomAdapter(private val mList: List<ProduceItem>, private val cellClickL
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = produceItem.produceCategory
-         holder.subtextView.text = produceItem.produceType
+        holder.subtextView.text = produceItem.produceType
+        val priceString = String.format("%.02f", produceItem.price)
+        holder.priceView.text = "$${priceString}"
 
         holder.itemView.setOnClickListener {
             cellClickListener.onCellClickListener(produceItem)
@@ -48,12 +50,12 @@ class CustomAdapter(private val mList: List<ProduceItem>, private val cellClickL
         val imageView: ImageView = itemView.findViewById(R.id.imageview)
         val textView: TextView = itemView.findViewById(R.id.textView)
         val subtextView: TextView = itemView.findViewById(R.id.subtextView)
-        val imageViewCart: ImageView = itemView.findViewById(R.id.imageViewCart)
+        val priceView: TextView = itemView.findViewById(R.id.priceView)
 
-        fun ViewHolder(ItemView: View) {
-            imageViewCart.setOnClickListener() {
-            }
-        }
+//        fun ViewHolder(ItemView: View) {
+//            imageViewCart.setOnClickListener() {
+//            }
+//        }
     }
 
     override fun getFilter(): Filter {
