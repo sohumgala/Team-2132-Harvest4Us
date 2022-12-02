@@ -2,6 +2,7 @@ package com.amm.harvest4us
 
 import android.content.Intent
 import android.os.*
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +30,7 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         // creating the bottom navigation functionality
         val myBottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
         val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
+
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         myBottomNavigationView.setOnNavigationItemSelectedListener {
@@ -61,7 +63,9 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 //        val settings = findViewById<FloatingActionButton>(R.id.fab_settings)
 //        val marketplace = findViewById<FloatingActionButton>(R.id.fab_marketplace)
 //        val resources = findViewById<FloatingActionButton>(R.id.fab_resources)
-
+        val saveChangesButton = findViewById<Button>(R.id.button)
+        saveChangesButton.setOnClickListener {
+            onSaveChangesButtonClicked() }
         refreshCart()
 //        logout.setOnClickListener {
 //            val intent = Intent(this, MainActivity::class.java)
@@ -130,6 +134,25 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 
         val totalText = findViewById<TextView>(R.id.totalText)
         val priceString = String.format("%.02f", cart.totalPrice)
-        totalText.setText("Total: $${priceString}")
+        totalText.setText("Total: $$priceString")
+    }
+
+    private fun onSaveChangesButtonClicked() {
+        val recyclerview = findViewById<RecyclerView>(R.id.lv_listView)
+        val requests = ArrayList<Pair<ProduceItem, Int>>()
+        // Get all changes needed before executing any (to ensure later changes don't get messed up
+        // by earlier changes in the list)
+        for (i in 0 until recyclerview.childCount) {
+            val holder = recyclerview.findViewHolderForAdapterPosition(i) as CustomAdapterCart.CartViewHolder
+            val quantity = holder.itemQuantity.text.toString().toIntOrNull()
+            if (quantity != null && quantity != (cart.items[i].quantityInOrder)) {
+                requests.add(Pair(cart.items[i], quantity))
+            }
+        }
+
+        // Execute all requests
+        for (request in requests) {
+            changeItemQuantity(request.first, request.second)
+        }
     }
 }
