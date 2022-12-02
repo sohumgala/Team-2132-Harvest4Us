@@ -71,6 +71,21 @@ Where `key` is the API key provided by Cardknox. Clean and rebuild the project i
 
 # Release Notes
 
+## Version 0.5.0
+
+
+### **Features**
+* Update the card UI on Marketplace to display produce pictures and price
+* Integrated appropriate produce images for each item
+* Added consistent price formatting - ensured trailing zeros were shown in the displayed price
+* Develop a "Save Changes" and "Add to Cart" button and functionality
+
+### **Bug Fixes**
+* Users can now input specific quantity amounts for produce already in cart and the app will save the updated amount - this made the backend time out previously
+
+## **Known Issues**
+* Cardknox SDK cannot be integrated into x86 emulators, so a separate branch is necessary to hold these changes
+
 ## Version 0.4.0
 
 
