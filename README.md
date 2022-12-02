@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/75860670/205373461-7d3d94f7-1f14-436d-aebb-8fd926fb556e.gif" alt="animated" />
+</p>
+
 # Harvest4Us 
 * Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
 
