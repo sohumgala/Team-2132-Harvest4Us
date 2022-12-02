@@ -7,6 +7,9 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import cardknox.payments.sdk.CardknoxSDK
+import cardknox.payments.sdk.CardknoxSDKUI
+import cardknox.payments.sdk.TransactionParameters
 import com.amm.harvest4us.items.CartItem
 import com.amm.harvest4us.items.ProduceItem
 import com.amm.harvest4us.items.jsonArrToCartItem
@@ -89,6 +92,21 @@ class CartActivity : AppCompatActivity(), CellClickListener {
 //            intent.putExtra("username", username)
 //            startActivity(intent)
 //        }
+
+        val checkoutButton = findViewById<Button>(R.id.checkoutButton)
+        checkoutButton.setOnClickListener {
+            val responseHandler = object : Handler(Looper.getMainLooper()) {
+                override fun handleMessage(msg: Message) {
+                    if (msg.what == -1) return
+                    // Before starting checkout, get most updated version of the cart
+                    val cartData = JSONArray(msg.obj as String)
+                    cart = jsonArrToCartItem(this@CartActivity, cartData)
+                    updateCartView()
+                    checkout()
+                }
+            }
+            backend.getCart(username, responseHandler)
+        }
     }
 
     // is called from Cart adapter to do backend call in Cart activity
@@ -153,6 +171,32 @@ class CartActivity : AppCompatActivity(), CellClickListener {
         // Execute all requests
         for (request in requests) {
             changeItemQuantity(request.first, request.second)
+        }
+    }
+
+    private fun checkout() {
+        Toast.makeText(this, "Launching checkout...", Toast.LENGTH_SHORT).show()
+        CardknoxSDK.setSoftwareConfigurations("Harvest4Us", "0.3.0", "4.5.9")
+        CardknoxSDK.setPrincipalKey(getString(R.string.cardknox_api_key))
+        CardknoxSDKUI.SetEnableKeyedEntry(true)
+        CardknoxSDKUI.SetEnableDeviceInsertSwipeTap(false)
+        val ui = CardknoxSDKUI.create()
+        val parameters = object: TransactionParameters() {
+            init {
+                SetxCommand("cc:sale")
+                SetxAmount(cart.totalPrice)
+                SetxCardNum("4444333322221111")
+                SetxExp("1224")
+            }
+        }
+        val request = ui.createRequestWithParameters(parameters)
+        if (request.GetIsValid()) {
+            request.process(this)
+        } else {
+            val validationErrors = request.GetValidationErrors()
+            for (error in validationErrors) {
+                Log.d("CartActivity", error)
+            }
         }
     }
 }
