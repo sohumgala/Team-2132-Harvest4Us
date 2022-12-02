@@ -79,47 +79,12 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingStart="20dp"
-            android:paddingTop="5dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="5dp">
-
-            <TextView
-                android:id="@+id/totalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:text="TextView"
-                android:textAlignment="viewStart"
-                android:textColor="@color/mainFont"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/checkoutButton"
-                android:layout_width="147dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="2dp"
-                android:backgroundTint="@color/harvest4us_green"
-                android:fontFamily="@font/montserrat_bold_font"
-                android:text="Checkout"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
-
         <Button
             android:id="@+id/button"
-            android:layout_width="421dp"
+            android:layout_width="382dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:background="@color/white"
             android:drawingCacheQuality="low"
             android:fontFamily="@font/montserrat_bold_font"
@@ -127,6 +92,49 @@
             android:text="Save Quantity Changes"
             android:textAlignment="center"
             android:textColor="@color/harvest4us_green" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/totalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginRight="25dp"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:text="Total: $55.45"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/mainFont"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/checkoutButton"
+                    android:layout_width="147dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="2dp"
+                    android:backgroundTint="@color/harvest4us_green"
+                    android:fontFamily="@font/montserrat_bold_font"
+                    android:text="Checkout"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
@@ -140,7 +148,7 @@
             app:labelVisibilityMode="labeled"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_nav_menu" >
+            app:menu="@menu/bottom_nav_menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
