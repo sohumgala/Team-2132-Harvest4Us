@@ -118,6 +118,7 @@
                     android:layout_marginStart="2dp"
                     android:layout_marginRight="25dp"
                     android:fontFamily="@font/montserrat_bold_font"
+                    android:paddingStart="5dp"
                     android:text="Total: $55.45"
                     android:textAlignment="viewStart"
                     android:textColor="@color/mainFont"
