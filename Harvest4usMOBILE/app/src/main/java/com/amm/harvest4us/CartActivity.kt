@@ -175,6 +175,10 @@ class CartActivity : AppCompatActivity(), CellClickListener {
     }
 
     private fun checkout() {
+        if (cart.items.isEmpty()) {
+            Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show()
+            return
+        }
         Toast.makeText(this, "Launching checkout...", Toast.LENGTH_SHORT).show()
         CardknoxSDK.setSoftwareConfigurations("Harvest4Us", "0.3.0", "4.5.9")
         CardknoxSDK.setPrincipalKey(getString(R.string.cardknox_api_key))
