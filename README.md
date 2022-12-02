@@ -71,7 +71,7 @@ Where `key` is the API key provided by Cardknox. Clean and rebuild the project i
 
 # Release Notes
 
-## Version 0.5.0
+## Version 1.0.0
 
 
 ### **Features**
