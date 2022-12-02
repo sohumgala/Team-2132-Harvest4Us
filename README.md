@@ -3,10 +3,10 @@
   <img src="https://user-images.githubusercontent.com/75860670/205373461-7d3d94f7-1f14-436d-aebb-8fd926fb556e.gif" alt="animated" />
 </p>
 
-# Harvest4Us 
+# 🥬 Harvest4Us 
 * Harvest4Us is an android application that connects local farmers to their community, making it easy for consumers to buy fresh produce.
 
-# Installation Guide
+# 🛠 Installation Guide
 
 To run the Harvest4Us app, you will first need to set up the backend. Once the backend is up and running, you can then build and run the app via Android Studio.
 
@@ -74,7 +74,7 @@ cardknox_api_key=key
 ```
 Where `key` is the API key provided by Cardknox. Clean and rebuild the project in Android Studio and the Cardknox UI will be enabled. Note that the `local.properties` file should not ever be checked into version control.
 
-# Release Notes
+# 📒 Release Notes
 
 ## Version 1.0.0
 
