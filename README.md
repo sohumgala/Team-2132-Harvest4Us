@@ -1,6 +1,6 @@
 
 <p align="center">
-![giphy](https://user-images.githubusercontent.com/75860670/205373062-c86aed38-ceba-4c70-a120-8b29d408df81.gif)
+![giphy](https://user-images.githubusercontent.com/75860670/205373461-7d3d94f7-1f14-436d-aebb-8fd926fb556e.gif)
 </p>
 
 # Harvest4Us 
