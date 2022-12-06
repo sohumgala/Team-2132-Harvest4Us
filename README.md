@@ -161,3 +161,8 @@ Where `key` is the API key provided by Cardknox. Clean and rebuild the project i
 * Categories for the educational resources section hasn't been implemented yet
 
 
+# Future Work
+## SNAP EBT Payments Currently Not Supported
+* Support for SNAP EBT Online payments is pending certification for Atlanta Mobile Market. The Cardknox API does support SNAP EBT payments - see [their documentation](https://docs.cardknox.com/api/transaction) - so it can be used to integrate SNAP payments into the app. Integration may require linking to an external website that meets certain requirements - check out the USDA's [page on the subject](https://www.fns.usda.gov/snap/retailer-requirements-provide-online-purchasing) for more details. 
+## Filter/Search Not Implemented
+* The filter UI seen on the Marketplace page is currently not implemented. Implementing this will require adding a backend call that handles filtering by price.
